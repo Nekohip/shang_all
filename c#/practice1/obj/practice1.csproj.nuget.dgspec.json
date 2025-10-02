@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\shang\\c#\\practice1\\practice1.csproj": {}
+    "F:\\shang\\git\\shang_2025_10_02\\c#\\practice1\\practice1.csproj": {}
   },
   "projects": {
-    "F:\\shang\\c#\\practice1\\practice1.csproj": {
+    "F:\\shang\\git\\shang_2025_10_02\\c#\\practice1\\practice1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\shang\\c#\\practice1\\practice1.csproj",
+        "projectUniqueName": "F:\\shang\\git\\shang_2025_10_02\\c#\\practice1\\practice1.csproj",
         "projectName": "practice1",
-        "projectPath": "F:\\shang\\c#\\practice1\\practice1.csproj",
+        "projectPath": "F:\\shang\\git\\shang_2025_10_02\\c#\\practice1\\practice1.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "F:\\shang\\c#\\practice1\\obj\\",
+        "outputPath": "F:\\shang\\git\\shang_2025_10_02\\c#\\practice1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
