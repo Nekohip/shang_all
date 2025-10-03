@@ -1,7 +1,18 @@
-<?php
-$b = 20;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 
-$a = 10;
-echo"$a 加 $b 的結果是: $c";
+<?php
+$name = 'shang';
+$age = 26;
+
+echo "My name is $name,$age years old."
 ?>
-$c = $a + $b;
+
+</body>
+</html>
