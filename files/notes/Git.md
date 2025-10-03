@@ -7,6 +7,8 @@ cd sh(輸入一半按tab) >>補齊檔名
 設定username, email
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
+第一次使用
+git clone https://github.com/Nekohip/shang_2025_10_02.git
 
 上傳檔案
 git add .
@@ -18,3 +20,5 @@ git clone https://github.com/Nekohip/shang_2025_10_02.git
 老師的git
 git clone https://github.com/chengkk0910/web2025-10-02.git
 git clone https://github.com/chengkk0910/web2025-10-02.git kai_project
+
+git pull 更新
