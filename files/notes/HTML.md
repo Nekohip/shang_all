@@ -1,3 +1,11 @@
+VScode安裝套件:live server
+輸入"!”
+auto save:after delay
+
+格式化文件>排版(shift+alt+F)
+CS193P
+
+Ctrl + /  >>註解
 <style>
 
     table,

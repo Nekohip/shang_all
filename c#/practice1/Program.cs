@@ -31,16 +31,17 @@ for (int i = 0; i < n; i++)
 
 }
 //Console.WriteLine(l);
-for (int i = 0; i < n; i++)
+l -= 4;
+for (int i = 0; i < n + 1; i++)
 {
-    for (int j = i + 1 ; j > 0; j--) 
+    for (int j = i + 1 ; j > 0; j--)
     {
         Console.Write(" ");
     }
-    for (int k = 0; k < l; k++) 
+    for (int k = 0; k < n + l; k++) //(n6/l3) ,6+3=9,6+1=7,6-1=5
     {
         Console.Write("*");
     }
-    l-=1;
+    l -= 2;
     Console.WriteLine();
 }
