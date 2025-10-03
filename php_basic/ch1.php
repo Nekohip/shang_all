@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>變數</title>
 </head>
 <body>
-<h1>PHP程式基礎</h1>
-<p>
-    <a href="ch1.php">第一章 變數</a>
-</p>
-<p>
-    <a href="ch2.php">第二章 if 選擇結構</a>
-</p>
+<h1>變數</h1>
+<?php
+    $a = 10;
+    $b = 20;
+    
+    $c = $a + $b;
+
+    echo $c;
+?>
 
 </body>
 </html>

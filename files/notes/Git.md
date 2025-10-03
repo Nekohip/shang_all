@@ -22,3 +22,6 @@ git clone https://github.com/chengkk0910/web2025-10-02.git
 git clone https://github.com/chengkk0910/web2025-10-02.git kai_project
 
 git pull 更新
+
+git init
+git remote add basic  https://github.com/Nekohip/shang_2025_10_02.git
