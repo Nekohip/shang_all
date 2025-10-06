@@ -4,77 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "89e54c1b5f80c777",
+        "id": "9424b34a5625fa2b",
         "type": "tabs",
         "children": [
           {
-            "id": "41fd272e69dd372c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "img/Pasted image 20251001113605.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251001113605"
-            }
-          },
-          {
-            "id": "382fdeb73085adda",
+            "id": "7f017e59d65e13d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI.md",
+                "file": "114PHP/Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI"
-            }
-          },
-          {
-            "id": "2e5f07545bcb6dd7",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "img/Pasted image 20251002105552.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251002105552"
-            }
-          },
-          {
-            "id": "9d57edec44860f52",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PHP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "PHP"
-            }
-          },
-          {
-            "id": "1554f68c0a845b00",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTML.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HTML"
+              "title": "Git"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -147,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "114PHP/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Git 的反向連結"
             }
           },
           {
@@ -165,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "114PHP/Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Git 的對外連結"
             }
           },
           {
@@ -219,33 +168,40 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "9d57edec44860f52",
+  "active": "7f017e59d65e13d3",
   "lastOpenFiles": [
-    "VSCode.md",
-    "PHP.md",
-    "front-side.md",
-    "Git.md",
+    "114PHP/HTML.md",
+    "114PHP/Github.md",
+    "114PHP/Git.md",
+    "114PHP/front-side.md",
+    "114PHP/CSharp.md",
+    "114PHP/AI.md",
+    "未命名.canvas",
+    "012.pdf",
+    "114PHP",
+    "未命名.base",
+    "img/Pasted image 20251002160630.png",
+    "未命名 6.base",
+    "未命名 5.base",
+    "未命名 4.base",
+    "未命名 3.base",
+    "未命名 1.base",
+    "未命名 2.base",
+    "114PHP/PS.md",
+    "自學/C_Sharp.md",
+    "img/Pasted image 20251001113605.png",
+    "img/Pasted image 20251002105552.png",
+    "114PHP/VSCode.md",
+    "114PHP/PHP.md",
+    "自學",
     "img/螢幕擷取畫面 2025-10-03 113307.png",
     "img/server.png",
-    "Github.md",
-    "HTML.md",
     "img/Pasted image 20251003094403.png",
-    "img/Pasted image 20251001113605.png",
     "img/Pasted image 20251003094309.png",
-    "img/Pasted image 20251002160630.png",
     "Pasted image 20251002160630.png",
-    "012.pdf",
-    "CSharp.md",
-    "AI.md",
-    "img/Pasted image 20251002105552.png",
     "img/Pasted image 20251001134334.png",
     "img/Pasted image 20251001125254.png",
-    "PS.md",
-    "未命名.canvas",
     "Welcome.md",
-    "2025-10-01.md",
-    "未命名.base",
-    "img",
-    "Untitled"
+    "2025-10-01.md"
   ]
 }

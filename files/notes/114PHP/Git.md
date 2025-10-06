@@ -1,4 +1,4 @@
-git bash指令
+git 指令
 shift+ins >>貼上
 在檔案總管理右鍵能直接進資料夾，或是用cd /f/shang
 ls >>所有資料夾
@@ -15,7 +15,7 @@ git add .
 git commit -m"init"
 git push
 
-下載檔案
+下載檔案AC
 git clone https://github.com/Nekohip/shang_2025_10_02.git
 老師的git
 git clone https://github.com/chengkk0910/web2025-10-02.git

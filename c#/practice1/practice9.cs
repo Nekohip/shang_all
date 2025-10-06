@@ -399,7 +399,7 @@ namespace practice9
             {
                 char n = charArray[i];
                 string nStr = Convert.ToString(n);
-                bool t = int.TryParse(nStr, out result);
+                bool t = int.TryParse(Convert.ToString(n), out result);
 
                 if (t == true)
                 {
@@ -413,18 +413,36 @@ namespace practice9
             }
             Console.Write(sum);*/
 
+            //老師解
+            /*char c;
+            int sum = 0;
+            do
+            {
+                c = (char)Console.Read();
+                if (c >= '0' && c <= '9')
+                {
+                    int n = c - '0';
+                    sum += n;
+                }           
+                else if (c == '*')
+                {
+                    sum += 500;
+                }
+            }
+            while (c != '#');
+            Console.Write(sum);*/
 
             //18.輸入整數，輸出整數的因數個數和所有因數
             /*int n = Convert.ToInt32(Console.ReadLine());
             int sum = 0;
             string fac = "";
-
+            
             for(int i = 1; i <= n; i++)
             {
                 if (n % i == 0)
                 {
                     sum++;
-                    fac = fac + i + " ";
+                    fac += i + " ";
                 }
             }
             Console.WriteLine("因數個數:" + sum);
@@ -452,7 +470,6 @@ namespace practice9
                 Console.WriteLine(n + "非質數");
             }*/
 
-
             //20.輸出一行10個*
             /*for(int i = 0; i < 10; i++)
             {
@@ -461,6 +478,16 @@ namespace practice9
 
 
             //21.輸出4行10個*
+            /*for(int i = 0; i < 4; i++)
+            {
+                for(int j = 0; j < 10; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }*/
+
+            //用continue
             /*int j = 0;
             for (int i = 0; i < 10; i++)
             {
@@ -472,15 +499,26 @@ namespace practice9
                     Console.WriteLine();
                     continue;
                 }
-
             }*/
-
 
             //22.輸入n,m，輸出n行m列的*
             /*int n = Convert.ToInt32(Console.ReadLine());
             int m = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }*/
+
+            //用continue
+            /*int n = Convert.ToInt32(Console.ReadLine());
+            int m = Convert.ToInt32(Console.ReadLine());
             int j = 0;
-            
+
             for (int i = 0; i < m; i++)
             {
                 Console.Write("*");
@@ -495,7 +533,8 @@ namespace practice9
             }*/
 
             //23.輸入整數n，輸出n層的三角形
-            /*int n = Convert.ToInt32(Console.ReadLine());
+            /*Console.Write("請輸入三角形層數:");
+            int n = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= n; i++)
             {
                 for(int j = 1; j <= i; j++)
@@ -505,7 +544,7 @@ namespace practice9
                 Console.WriteLine();
             }*/
 
-            //自己寫的
+            //用continue
             /*int n = Convert.ToInt32(Console.ReadLine());
             int j = 1;
             for (int i = 1; i > 0; i--)
@@ -518,11 +557,12 @@ namespace practice9
                     Console.WriteLine();
                     continue;
                 }
-                
+
             }*/
 
             //24.輸入整數n，輸出n層的三角形的斜邊
-            /*int n = Convert.ToInt32(Console.ReadLine());
+            /*Console.Write("請輸入層數:");
+            int n = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= n; i++)
             {
                 for(int j = 1; j < i; j++)                    
@@ -530,27 +570,22 @@ namespace practice9
                     Console.Write(" ");
                 }
 
-                Console.Write("*");
-                Console.WriteLine();
+                Console.WriteLine("*");   
             }*/
 
             //25.輸入整數n，輸出n層的倒三角形的斜邊
-            /*int n = Convert.ToInt32(Console.ReadLine());
-            int m = n;
-            for(int i = 0; i < n; i++)
+            /*int n = Convert.ToInt32(Console.ReadLine());          
+            for(int i = n; i > 0; i--)
             {
-                for(int j = m - 1; j > 0; j--)
+                for(int j = i - 1; j > 0; j--)
                 {
                     Console.Write(" ");
                 }
-
-                Console.Write("*");
-                m--;
-                Console.WriteLine();
+                Console.WriteLine("*");
             }*/
 
             //26.輸入整數n，輸出n層的平行四邊形
-            /*int n = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < i; j++)
@@ -561,9 +596,9 @@ namespace practice9
                 {
                     Console.Write("*");
                 }
-                
+
                 Console.WriteLine();
-            }*/
+            }
 
             //27.輸入n，輸出n列等腰三角
             /*int n = Convert.ToInt32(Console.ReadLine());
@@ -645,7 +680,23 @@ namespace practice9
                 }               
             }*/
 
-            //31.
+            //31.輸入n1和n2，找出兩數的最大公因數
+            /*int n1 = Convert.ToInt32(Console.ReadLine());
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            for(int i = n1; i > 0; i--)
+            {
+                for (int j = n2; j > 0; j--)
+                {
+                    if(n1 % i == 0 && n2 % j == 0 && i == j)
+                    {
+                        Console.Write("最大公因數:" + j);
+                        return;
+                    }
+                }
+            }*/
+
+            //32.
+
         }
     }
 }
