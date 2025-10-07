@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "40db652fd44ca8ad",
+    "id": "e0d4bb69cee04fb3",
     "type": "split",
     "children": [
       {
-        "id": "9424b34a5625fa2b",
+        "id": "be958ea75f450939",
         "type": "tabs",
         "children": [
           {
-            "id": "7f017e59d65e13d3",
+            "id": "e30d842a1c5a51a3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "114PHP/HTML.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "HTML"
+              "title": "新分頁"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "f19322c6e9ad92d2",
+    "id": "02f224ec2e856723",
     "type": "split",
     "children": [
       {
-        "id": "a4df7845bafee7a0",
+        "id": "532b124b4cc82bcc",
         "type": "tabs",
         "children": [
           {
-            "id": "4009aa85cdd7baa9",
+            "id": "467032609b6ef6a3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +44,7 @@
             }
           },
           {
-            "id": "6b497621a62da081",
+            "id": "a12ea991d2cf9ef4",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,17 +57,17 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜尋"
             }
           },
           {
-            "id": "3752534d4be73ee3",
+            "id": "48b32c9912b6a232",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "書籤"
             }
           }
         ]
@@ -81,20 +77,19 @@
     "width": 300
   },
   "right": {
-    "id": "72bdf0a2dff26f54",
+    "id": "a16d5e70f7be4735",
     "type": "split",
     "children": [
       {
-        "id": "bb019e79e2e7cc04",
+        "id": "b23c18fb8acb4118",
         "type": "tabs",
         "children": [
           {
-            "id": "26984990e7552299",
+            "id": "6889c09b2de55ca4",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "114PHP/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Git 的反向連結"
+              "title": "反向連結"
             }
           },
           {
-            "id": "6770e5705e6bceb7",
+            "id": "6ff2784030b394a0",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "114PHP/Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Git 的對外連結"
+              "title": "對外連結"
             }
           },
           {
-            "id": "fc3b69acdfbfec46",
+            "id": "5d4b25e0bf891e31",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,11 +127,11 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "標籤"
             }
           },
           {
-            "id": "76ab34c831ede1de",
+            "id": "7457514bcde27000",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -147,7 +141,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "大綱"
             }
           }
         ]
@@ -168,40 +162,8 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "7f017e59d65e13d3",
+  "active": "e30d842a1c5a51a3",
   "lastOpenFiles": [
-    "114PHP/front-side.md",
-    "114PHP/HTML.md",
-    "自學/CSharp.md",
-    "自學/C_Sharp.md",
-    "114PHP/VSCode.md",
-    "114PHP/Git.md",
-    "114PHP/Github.md",
-    "114PHP/AI.md",
-    "未命名.canvas",
-    "012.pdf",
-    "114PHP",
-    "未命名.base",
-    "img/Pasted image 20251002160630.png",
-    "未命名 6.base",
-    "未命名 5.base",
-    "未命名 4.base",
-    "未命名 3.base",
-    "未命名 1.base",
-    "未命名 2.base",
-    "114PHP/PS.md",
-    "img/Pasted image 20251001113605.png",
-    "img/Pasted image 20251002105552.png",
-    "114PHP/PHP.md",
-    "自學",
-    "img/螢幕擷取畫面 2025-10-03 113307.png",
-    "img/server.png",
-    "img/Pasted image 20251003094403.png",
-    "img/Pasted image 20251003094309.png",
-    "Pasted image 20251002160630.png",
-    "img/Pasted image 20251001134334.png",
-    "img/Pasted image 20251001125254.png",
-    "Welcome.md",
-    "2025-10-01.md"
+    "notes/自學/CSharp.md"
   ]
 }

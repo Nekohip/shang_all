@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hollow - with Buster Sword Background</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+      color: #eaeaea;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Background Sword Layer */
+    .bg-sword {
+      position: fixed;
+      bottom: -10%;
+      right: 24%;
+      width: 100%;
+      max-width: 1000px;
+      opacity: 0.3;
+      pointer-events: none;
+      transform: rotate(0deg);
+      filter: blur(2px) grayscale(0%);
+      z-index: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .bg-sword:hover {
+      opacity: 0.3;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 40px;
+      padding: 50px;
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5em;
+      letter-spacing: 0.2em;
+      color: #e0e0e0;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      animation: textGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+      from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+      to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+    }
+
+    p strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 1.4em;
+      color: #ffffff;
+      margin-bottom: 1.2em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.5em;
+    }
+
+    p {
+      color: #d0d0d0;
+      font-size: 1.25em;
+      line-height: 1.9;
+      white-space: pre-wrap;
+      text-align: left;
+      padding: 0 20px;
+      transition: color 0.3s ease;
+    }
+
+    p:hover {
+      color: #e8e8e8;
+    }
+
+    p span {
+      color: #888;
+      font-style: italic;
+      font-size: 0.95em;
+      text-align: center;
+      display: block;
+      margin: 25px 0;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    p span:hover {
+      opacity: 1;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-top: 50px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .video-container:hover {
+      transform: scale(1.02);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      h3 {
+        font-size: 2.5em;
+        letter-spacing: 0.1em;
+      }
+
+      .container {
+        padding: 30px;
+        margin: 20px;
+      }
+
+      .bg-sword {
+        width: 90%;
+        bottom: -20%;
+        right: -20%;
+      }
+
+      p {
+        font-size: 1.1em;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h3 {
+        font-size: 2em;
+      }
+
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      .bg-sword {
+        width: 100%;
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Sword Image -->
+  <img class="bg-sword" src="../images/buster-sword.png" alt="Buster Sword Background" />
+
+  <div class="container">
+    <h3>Hollow</h3>
+    <p>
+      <strong>詞: 野島一成　曲: 植松伸夫　演唱: Yosh</strong>
+      I would be lost, drifting along<br>
+      Floating up high time after time<br>
+      And there you'd be shining brightly<br>
+      Your smiling face to guide my way<br><br>
+      Bloody and bruised, brought to my knees<br>
+      When beaten down, when broken up<br>
+      You would appear, reach out to me<br>
+      Heal every wound and make me whole<br>
+      <br>
+      Was it all a dream, will I ever know?<br>
+      Foolish and blind to everything<br>
+      Had I realized, had I thought it through?<br>
+      Would you be here in my embrace?<br>
+      <br>
+      Shine bright once more<br>
+      Guide me to you<br>
+      Smile bright once more<br>
+      This time I will never let you go<br>
+      <br>
+      [Instrumental Break]<br>
+      <br>
+      With your every smile hiding something more<br>
+      Dark mysteries lurking beneath<br>
+      But I was consumed with this emptiness<br>
+      This selfishness, this void to fill<br>
+      <br>
+      Hear me once more<br>
+      Show me your smile<br>
+      This time for sure<br>
+      I'll see the truth hidden inside your tears<br>
+      But I, I know<br>
+      That you're long gone<br>
+      But I, I will<br>
+      Go on howling and hollow<br>
+      <br>
+      To never know<br>
+    </p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/DCDaYFb8wpc?si=Ny-wL_sieDAk_Mx7"
+        title="YouTube video player"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\shang\\shang_all\\c#\\practice1\\practice1.csproj": {}
+    "F:\\shang\\git\\shang_all\\c#\\practice1\\practice1.csproj": {}
   },
   "projects": {
-    "D:\\shang\\shang_all\\c#\\practice1\\practice1.csproj": {
+    "F:\\shang\\git\\shang_all\\c#\\practice1\\practice1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shang\\shang_all\\c#\\practice1\\practice1.csproj",
+        "projectUniqueName": "F:\\shang\\git\\shang_all\\c#\\practice1\\practice1.csproj",
         "projectName": "practice1",
-        "projectPath": "D:\\shang\\shang_all\\c#\\practice1\\practice1.csproj",
-        "packagesPath": "C:\\Users\\shang\\.nuget\\packages\\",
-        "outputPath": "D:\\shang\\shang_all\\c#\\practice1\\obj\\",
+        "projectPath": "F:\\shang\\git\\shang_all\\c#\\practice1\\practice1.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "F:\\shang\\git\\shang_all\\c#\\practice1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

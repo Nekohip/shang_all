@@ -39,3 +39,11 @@ Ctrl + /  >>註解
 Element:成對標籤(<html><head><body>)
 可以用GPT置換圖片
 "這段w3school的範本有圖片，幫我換成unsplash裡的圖片"
+
+<h1 style="background-color:powderblue;">This is a heading</h1>
+也能寫在head
+<style>
+h1{
+	background-color:powderblue;
+}
+</style>

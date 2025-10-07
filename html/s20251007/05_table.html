@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{
+            width:100%;
+        }
+
+        table,
+        tr,
+        td{
+            border:1px solid black;
+            border-collapse:collapse;
+        }
+    </style>
+</head>
+<body>
+    <h2>Table</h2>
+    <table>
+    <tr>
+        <!-- 向右合併儲存格(column)，被合併的註解掉 -->
+        <td colspan="2">11</td>
+        <!-- <td>12</td> -->
+        <td>13</td> 
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>22</td>
+        <!-- 向下合併儲存格(row) -->
+        <td rowspan="2">23</td>
+    </tr>
+    <tr>
+        <td>31</td>
+        <td>32</td>
+        <!-- <td>33</td> -->
+    </tr>
+</table>
+</body>
+</html>

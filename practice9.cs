@@ -681,7 +681,7 @@ namespace practice9
             }*/
 
             //31.輸入n1和n2，找出兩數的最大公因數
-            /*int n1 = Convert.ToInt32(Console.ReadLine());
+            int n1 = Convert.ToInt32(Console.ReadLine());
             int n2 = Convert.ToInt32(Console.ReadLine());
             for(int i = n1; i > 0; i--)
             {
@@ -693,7 +693,7 @@ namespace practice9
                         return;
                     }
                 }
-            }*/
+            }
 
             //32.
 
