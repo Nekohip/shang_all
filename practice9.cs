@@ -560,6 +560,21 @@ namespace practice9
 
             }*/
 
+            //靠右三角形
+            /*int n = Convert.ToInt32(Console.ReadLine());
+            for(int i = 1; i <= n; i++)
+            {
+                for(int j = n - i; j > 0; j--)
+                {
+                    Console.Write(" ");                 
+                }
+                for (int k = i; k > 0; k--)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }*/
+
             //24.輸入整數n，輸出n層的三角形的斜邊
             /*Console.Write("請輸入層數:");
             int n = Convert.ToInt32(Console.ReadLine());
@@ -602,13 +617,30 @@ namespace practice9
 
             //27.輸入n，輸出n列等腰三角
             /*int n = Convert.ToInt32(Console.ReadLine());
+            int l = 1;
             for (int i = 0; i < n; i++)
             {
-                for (int j = n - i - 1; j > 0; j--)
+                for (int j = n - i - 1; j > 0; j--) //要n-1個空格，每行遞減1，i剛好從0開始
                 {
                     Console.Write(" ");
                 }
-                for (int k = 0; k < i + 1; k++)
+                for (int k = 0; k < i + l; k++) //(l/i)0+1=1, 1+2=3, 2+3=5 //奇數個*，每行多2顆，i每次回圈+1，l也+1
+                {
+                    Console.Write("*");
+                }
+                l++;
+                Console.WriteLine();
+            }*/
+
+            //老師解
+            /*int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = n - i; j > 0; j--) //要n-1個空格，每行遞減1，i剛好從0開始
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < 2 * i - 1; k++) //(l/i)0+1=1, 1+2=3, 2+3=5 //奇數個*，每行多2顆，i每次回圈+1，l也+1
                 {
                     Console.Write("*");
                 }
@@ -646,6 +678,33 @@ namespace practice9
                 }
                 Console.WriteLine();
             }*/
+
+            //
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = n - i; j > 0; j--) //要n-1個空格，每行遞減1，i剛好從0開始
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < 2 * i - 1; k++) //(l/i)0+1=1, 1+2=3, 2+3=5 //奇數個*，每行多2顆，i每次回圈+1，l也+1
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            for (int i = 1; i <= n-1; i++)
+            {
+                for (int j = i; j > 0; j--) //要n-1個空格，每行遞減1，i剛好從0開始
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 2 * (n - i) -1; k > 0; k--) //(l/i)0+1=1, 1+2=3, 2+3=5 //奇數個*，每行多2顆，i每次回圈+1，l也+1
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
 
             //29.九九乘法表
             /*for(int i = 1; i < 10; i++)  //n1
