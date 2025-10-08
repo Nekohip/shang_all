@@ -585,7 +585,7 @@ namespace practice9
             }*/
 
             //26.輸入整數n，輸出n層的平行四邊形
-            int n = Convert.ToInt32(Console.ReadLine());
+            /*int n = Convert.ToInt32(Console.ReadLine());
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < i; j++)
@@ -598,7 +598,7 @@ namespace practice9
                 }
 
                 Console.WriteLine();
-            }
+            }*/
 
             //27.輸入n，輸出n列等腰三角
             /*int n = Convert.ToInt32(Console.ReadLine());
@@ -681,7 +681,7 @@ namespace practice9
             }*/
 
             //31.輸入n1和n2，找出兩數的最大公因數
-            int n1 = Convert.ToInt32(Console.ReadLine());
+            /*int n1 = Convert.ToInt32(Console.ReadLine());
             int n2 = Convert.ToInt32(Console.ReadLine());
             for(int i = n1; i > 0; i--)
             {
@@ -693,7 +693,7 @@ namespace practice9
                         return;
                     }
                 }
-            }
+            }*/
 
             //32.
 
