@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7f017e59d65e13d3",
+            "id": "9259188145202cb5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "114PHP/HTML.md",
+                "file": "自學/HTML.md",
                 "mode": "source",
                 "source": false
               },
@@ -168,18 +168,22 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "7f017e59d65e13d3",
+  "active": "9259188145202cb5",
   "lastOpenFiles": [
-    "114PHP/PS.md",
-    "Pasted image 20251008085217.png",
     "114PHP/HTML.md",
+    "114PHP/PS.md",
+    "自學/HTML.md",
+    "114PHP/VSCode.md",
+    "img/Pasted image 20251008134957.png",
+    "114PHP/推薦網站、軟體.md",
+    "114PHP/PHP.md",
+    "114PHP/Github.md",
+    "114PHP/Git.md",
+    "114PHP/front-side.md",
+    "114PHP/AI.md",
+    "img/Pasted image 20251008085217.png",
     "自學/CSharp.md",
     "自學/C_Sharp.md",
-    "114PHP/front-side.md",
-    "114PHP/VSCode.md",
-    "114PHP/Git.md",
-    "114PHP/Github.md",
-    "114PHP/AI.md",
     "未命名.canvas",
     "012.pdf",
     "114PHP",
@@ -193,14 +197,12 @@
     "未命名 2.base",
     "img/Pasted image 20251001113605.png",
     "img/Pasted image 20251002105552.png",
-    "114PHP/PHP.md",
     "自學",
     "img/螢幕擷取畫面 2025-10-03 113307.png",
     "img/server.png",
     "img/Pasted image 20251003094403.png",
     "img/Pasted image 20251003094309.png",
     "Pasted image 20251002160630.png",
-    "img/Pasted image 20251001134334.png",
     "Welcome.md",
     "2025-10-01.md"
   ]

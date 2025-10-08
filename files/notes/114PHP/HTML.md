@@ -48,6 +48,7 @@ h1{
 }
 </style>
 
+
 檔案表示:
 1. .html和*.jpg在不同硬碟:
 <img src="file:///f:/*.jpg" width="300" height="120"/>
@@ -64,4 +65,4 @@ h1{
 ../上一層資料夾
 ../../上一層的上一層
 /根目錄
-
+creative
