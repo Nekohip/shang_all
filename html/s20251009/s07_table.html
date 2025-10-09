@@ -5,19 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        table{
+            width:60%;
+            /* vh使用畫面大小 */
+            height:80vh;
+            /* 文字置中 */
+            text-align:center;
+            /* 表格置中 */
+            margin:auto;
+            margin-top:5vh;  /*數字越大越下面*/
+        /* 表格陰影  向右移動 向下移動 柔軟度 面積  */
+            box-shadow: 20px 20px 5px 12px black;
+        }
         table,
         tr,
         td{
-            border:1px solid black;
-            border-collapse:separate;
+            border:10px solid aquamarine;
+            border-collapse:collapse;
         }
-        table{
-            width:400px;
-            text-align: center
+
+        /* .class */
+        .left-box{
+            /* 背景顏色 */
+            background-color: aquamarine;
+            /* 文字顏色 */
+            color:azure;
+        }
+        .text1{
+            font-size:50px;
+        }
+        .text2{
+            font-size:30px;
         }
     </style>
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <td width="40%" class="left-box">
+                <h2 class="text1">
+                    i need a woman                
+                </h2>
+                <p class="text2">
+                    i need a woman in my life to mess my head up to
+                    drive me crazy for us to curse each other out for
+                    her to beat me up for me to leave home to disappear 
+                    like a madman for a week for my friends to call me asking
+                    "where are you, what are you doing, we haven't heard from you
+                    " for her to ruin me so i'll never get away from her
+                </p>
+            </td>
+            <td class="right-box">
+                <form action="">
+                    <p>
+                        帳號:
+                        <input type="text" name="" id="">
+                    </p>
+                    <p>
+                        密碼:
+                        <!-- 自打出來變"·····" -->
+                        <input type="password" name="" id="">
+                    </p>
+                    <p>
+                        <input type="reset" value="重置">
+                        <input type="submit" value="送出">
+                    </p>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
