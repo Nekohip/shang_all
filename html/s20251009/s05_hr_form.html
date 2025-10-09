@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            position: relative;
+            width: 170px;
+            left: 470px;
+        }
+        .form{
+            width:50%;
+            background-color:gray;
+            margin:auto;
+        }
+        table,
+        tr,
+        td{
+            border:1px solid whitesmoke;
+            border-collapse:collapse;
+        }
+        table{
+            width:100%;
+            line-height:30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="title">
+        <h2>人員增補申請表</h2>
+    </div>
+    <div class="form">
+        
+        <form action="">
+            <fieldset>
+                <table>
+                <tr>
+                <td>
+                <label for="">部門別:</label>
+                <input type="text" name="dep" id="dep">
+
+                <label for="">&emsp;職稱:</label>
+                <input type="text" name="job" id="job"><br><br>
+
+                <label for="">人數:</label>
+                <input type="text" name="count" id="count">
+
+                <label for="">&emsp;&emsp;預計進用日期:</label>
+                <input type="text" name="date" id="date"><br><br>
+                
+
+                <label for="">增補原因:</label>
+                <input type="checkbox" name="cause" id="year">
+                <label for="">年度計畫內</label>
+                <input type="checkbox" name="cause" id="fill">
+                <label for="">職位出缺遞補</label>
+                <input type="checkbox" name="cause" id="project">
+                <label for="">專案申請</label>
+                <input type="checkbox" name="cause" id="other">
+                <label for="">其他:</label>
+                <input type="text" name="cause" id="why"><br><br>
+
+                <label for="">增補方式:</label>
+                <input type="radio" name="way" id="in">
+                <label for="">內部輪調</label>
+                <input type="radio" name="way" id="out">
+                <label for="">對外徵才</label>
+
+                <label for="">&emsp;工作內容:</label>
+                <input type="text" name="content" id="content"><br><br>
+                </td>
+                </tr>
+
+                <tr>
+                <td>
+                <h3>基本條件</h3>
+                
+                <label for="">性別:</label>
+                <input type="radio" name="sex" id="male">
+                <label for="">男</label>
+                <input type="radio" name="sex" id="female">
+                <label for="">女</label>
+                
+                <label for="">&emsp;年齡:</label>
+                <input type="text" name="" id="y_old"><br><br>
+
+                <label for="">學歷:</label>
+                <input type="radio" name="edu" id="high">
+                <label for="">高中職</label>
+                <input type="radio" name="edu" id="spe">
+                <label for="">專科</label>
+                <input type="radio" name="edu" id="uni">
+                <label for="">大學</label>
+                <input type="radio" name="edu" id="master">
+                <label for="">碩士</label>
+                <input type="radio" name="edu" id="doc">
+                <label for="">博士</label><br><br>
+
+                <label for="">科系:</label>
+                <input type="radio" name="col_dep" id="yes">
+                <label for="">限科系:</label>
+                <input type="text" name="col_dep" id="col_dep">
+                <input type="radio" name="col_dep" id="no">
+                <label for="">不限科系</label>
+
+                <label for="">&emsp;兵役:</label>
+                <input type="radio" name="mil_serv" id="finish">
+                <label for="">役畢</label>
+                <input type="radio" name="mil_serv" id="no">
+                <label for="">未役</label>
+                <input type="radio" name="mil_serv" id="whatever">
+                <label for="">不拘</label><br><br>
+
+                <label for="">駕照:</label>
+                <input type="radio" name="drive_lic" id="yes">
+                <label for="">機車</label>
+                <input type="radio" name="drive_lic" id="no">
+                <label for="">汽車</label>
+                <input type="radio" name="drive_lic" id="whatever">
+                <label for="">不拘</label>
+                <label for="">&emsp;工作經歷:</label>
+                <input type="text" name="exp" id="exp"><br><br>
+                </td>
+                </tr>
+
+                <tr>
+                <td>
+                <h3>語言</h3>
+                <label for="">英文:</label>
+                <input type="radio" name="en" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="en" id="read">
+                <label for="">具閱讀能力</label>
+                <input type="radio" name="en" id="_&write">
+                <label for="">具一般讀寫能力</label>
+                <input type="radio" name="en" id="very_nice">
+                <label for="">聽說讀寫流利</label><br><br>
+
+                <label for="">日文:</label>
+                <input type="radio" name="jp" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="jp" id="read">
+                <label for="">具閱讀能力</label>
+                <input type="radio" name="jp" id="_&write">
+                <label for="">具一般讀寫能力</label>
+                <input type="radio" name="jp" id="very_nice">
+                <label for="">聽說讀寫流利</label><br><br>
+
+                <label for="">其他語言:</label>
+                <input type="text" name="lang" id="lang"><br>
+                <input type="radio" name="en" id="read">
+                <label for="">不拘</label>
+                <input type="radio" name="jp" id="read">
+                <label for="">具閱讀能力</label>
+                <input type="radio" name="jp" id="_&write">
+                <label for="">具一般讀寫能力</label>
+                <input type="radio" name="jp" id="very_nice">
+                <label for="">聽說讀寫流利</label><br><br>
+                </td>
+                </tr>
+
+                <tr>
+                <td>
+                <h3>電腦文書處理能力</h3>
+                <label for="">Word:</label>
+                <input type="radio" name="word" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="word" id="can">
+                <label for="">能應用</label>
+                <input type="radio" name="word" id="can_alot">
+                <label for="">熟練</label><br><br>
+
+                <label for="">Excel:</label>
+                <input type="radio" name="excel" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="excel" id="can">
+                <label for="">能應用</label>
+                <input type="radio" name="excel" id="can_alot">
+                <label for="">熟練</label><br><br>
+
+                <label for="">Power Point:</label>
+                <input type="radio" name="ppt" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="ppt" id="can">
+                <label for="">能應用</label>
+                <input type="radio" name="ppt" id="can_alot">
+                <label for="">熟練</label><br><br>
+
+                <label for="">Access:</label>
+                <input type="radio" name="access" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="access" id="can">
+                <label for="">能應用</label>
+                <input type="radio" name="access" id="can_alot">
+                <label for="">熟練</label><br><br>
+
+                <label for="">其他:</label>
+                <input type="text" name="other_app" id="lang"><br>
+                <input type="radio" name="other_app" id="whatever">
+                <label for="">不拘</label>
+                <input type="radio" name="other_app" id="can">
+                <label for="">能應用</label>
+                <input type="radio" name="other_app" id="can_alot">
+                <label for="">熟練</label><br><br>
+                </td>
+                </tr>
+
+                <tr>
+                <td>
+                <label for="">其他專長及技能:</label>
+                <input type="text" name="other_skill" id="other_skill">
+                <label for="">其他說明:</label>
+                <input type="text" name="illu" id="illu">                
+                </td>
+                </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
