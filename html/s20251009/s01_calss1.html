@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課表shang</title>
+    <style>
+        /*宣告參數>>名稱:值(--xxxx:100px)*/
+        :root{
+            --table-width:600px;
+            --left-w:120px;
+            --day-w:80px;
+            --border-color:#dcdcdc;
+            --header-text:#fff;
+            --row-hover:#f8f9fc;
+            --font-main:"Microsoft JhengHei", "Noto Sans TC", sans-serif;
+        }
+        body{
+            display:flex;
+            justify-content:center;  /*表格置中*/
+            padding:30px;
+            background:linear-gradient(180deg, #f4f6f9, #ffffff);
+            font-family:var(--font-main);
+        }
+        
+        table.timetable{
+            width:var(--table-width);  /*使用參數>>欲套用項目:var(參數名)*/
+            border-collapse:collapse;
+            box-shadow:0 2px 10px rgba(0, 0, 0, 0.08);
+            border-radius:12px;
+            /* overflow:hidden; */
+            /* background:white; */
+            /* font-size:14px; */
+            /* text-align:center; */
+        }
+    </style>
+</head>
+<body>
+
+    <table class="timetable" role="table" aria-label="課表">
+        <thead>
+            <!-- 1 -->
+            <tr>
+                <th class="col-time">節數</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+            </tr>
+        </thead>
+        <!-- 2 -->
+        <tbody>
+            <tr>
+                <td>早自習<span class="small">0750~0830</span></td>
+                <td  colspan="5"></td>
+                <!-- <td>23</td> -->
+                <!-- <td>24</td> -->
+                <!-- <td>25</td> -->
+                <!-- <td>26</td> -->
+            </tr>
+            <!-- 3 -->
+            <tr>
+                <td>第一節<span class="small">0840~0920</span></td>
+                <td rowspan="2">國語<br>劉展華</td>
+                <td colspan="3">數學<br>劉展華</td>
+                <!-- <td>34</td> -->
+                <!-- <td>35</td> -->
+                <td>國語<br>劉展華</td>
+            </tr>
+            <!-- 4 -->
+            <tr>
+                <td>第二節<span class="small">0930~1010</span></td>
+                <!-- <td>42</td> -->
+                <td>自然<br>黃新民</td>
+                <td>音樂<br>萬巧如</td>
+                <td>國語<br>劉展華</td>
+                <td>彈性<br>劉展華</td>
+            </tr>
+            <!-- 5 -->
+            <tr>
+                <td>第三節<span class="small">1030~1110</span></td>
+                <td>數學<br>劉展華</td>
+                <td>健康<br>潘文欽</td>
+                <td>國語<br>劉展華</td>
+                <td>鄉土<br>魏士欽</td>
+                <td rowspan="2">自然<br>黃新民</td>
+            </tr>
+            <!-- 6 -->
+            <tr>
+                <td>第四節<span class="small">1120~1200</span></td>
+                <td>英語<br>黃定宜</td>
+                <td>彈性<br>劉展華</td>
+                <td>社會<br>劉展華</td>
+                <td>英語<br>黃定宜</td>
+                <!-- <td>66</td> -->
+            </tr>
+            <!-- 7 -->
+            <tr>
+                <td>午休時間<span class="small">1200~1320</span></td>
+                <td colspan="5"></td>
+                <!-- <td>73</td> -->
+                <!-- <td>74</td> -->
+                <!-- <td>75</td> -->
+                <!-- <td>76</td> -->
+            </tr>
+            <!-- 8 -->
+            <tr>
+                <td>第五節<span class="small">1330~1410</span></td>
+                <td>社會<br>劉展華</td>
+                <td rowspan="2">美勞<br>許文杰</td>
+                <td rowspan="3"></td>
+                <td rowspan="3">綜合<br>劉展華</td>
+                <td>體育<br>潘文欽</td>
+            </tr>
+            <!-- 9 -->
+            <tr>
+                <td>第六節<span class="small">1420~1500</span></td>
+                <td>體育<br>潘文欽</td>
+                <!-- <td>93</td> -->
+                <!-- <td>94</td> -->
+                <!-- <td>95</td> -->
+                <td>國語<br>劉展華</td>
+            </tr>
+            <!-- 10 -->
+            <tr>
+                <td>第七節<span class="small">1520~1600</span></td>
+                <td colspan="2">彈性<br>劉展華</td>
+                <!-- <td>103</td> -->
+                <!-- <td>104</td> -->
+                <!-- <td>105</td> -->
+                <td>社會<br>劉展華</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
