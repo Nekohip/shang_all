@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\shang\\git\\shang_code\\c#\\ConsoleApp1\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "F:\\shang\\git\\shang_code\\c#\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "F:\\shang\\git\\shang_code\\c#\\practice\\practice.csproj",
+      "projectName": "practice",
+      "projectPath": "F:\\shang\\git\\shang_code\\c#\\practice\\practice.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\shang\\git\\shang_code\\c#\\ConsoleApp1\\obj\\",
+      "outputPath": "F:\\shang\\git\\shang_code\\c#\\practice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
