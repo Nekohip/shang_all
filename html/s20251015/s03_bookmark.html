@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*class用 . 呼叫*/
+        .nav{
+            width:100%;
+            height:10vh;
+            background-color:#e7dddd;
+        }
+
+        .box1{
+            width:100%;
+            height:90vh;
+            background-color:lightblue;
+        }
+
+        .box2{
+            width:100%;
+            height:90vh;
+            background-color:lightgreen;
+        }
+
+        .box3{
+            width:100%;
+            height:90vh;
+            background-color:lightpink;
+        }
+
+        /*id用 # 呼叫*/
+        a{
+            text-decoration:none;  /*去除超連結底線*/
+        }
+
+    </style>
+</head>
+<body>
+    <!-- class群組，id唯一 -->
+    <div class="nav">
+       <a href="#b1">
+            <img src="https://picsum.photos/id/9/100/100" alt="">
+       </a>
+       <a href="#b2">
+            <img src="https://picsum.photos/id/10/100/100" alt="">
+       </a>
+       <a href="#b3">
+            <img src="https://picsum.photos/id/11/100/100" alt="">
+       </a>
+    </div>
+
+    <div id="b1"></div>
+    <div class="box1">
+       <img src="https://picsum.photos/id/9/1600/900" alt="" width="90%">
+    </div>
+
+    <div id="b2"></div>
+    <div class="box2">
+       <img src="https://picsum.photos/id/10/1600/900" alt="" width="90%">
+    </div>
+
+    <div id="b3"></div>
+    <div class="box3">
+       <img src="https://picsum.photos/id/11/1600/900" alt="" width="90%">
+    </div>
+
+</body>
+
+</html>

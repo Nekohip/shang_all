@@ -1,0 +1,17 @@
+/*特定列顏色*/
+tr:nth-child(even) td{
+background:#d8ebdf;
+}
+
+
+/*鼠標指到整列變色*/
+tr:hover td{
+background-color:#c1e1c1;
+}
+
+
+/*first-child:第一個子元素*/
+tr td:first-child{
+background-color: #d8ebdf;
+color:#4d7e64;
+}

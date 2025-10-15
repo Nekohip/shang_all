@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食選單</title>
+    <style>
+        body {
+            background-color: #fff8e7; /* 背景：柔米黃 */
+            font-family: "微軟正黑體", sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 80%;
+            margin: 60px auto;
+            text-align: center;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+
+        td {
+            background-color: #fff3d4; /* 暖色卡片底 */
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        td:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 80%;
+            height: 220px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: #444;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            color: #b35b00;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #a35a00;
+            letter-spacing: 3px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>🍴 愛好</h1>
+
+    <table>
+        <tr>
+            <td>
+                <a href="f1.html">
+                    <img src="../images/fire.jpg" alt="料理1"><br>
+                    <span>1. 喜好1-壽喜燒</span>
+                </a>
+            </td>
+            <td>
+                <a href="f2.html">
+                    <img src="../images/fire.jpg" alt="料理2"><br>
+                    <span>2. 喜好2-鴛鴦鍋</span>
+                </a>
+            </td>
+            <td>
+                <a href="f3.html">
+                    <img src="../images/niko.jpg" alt="料理3"><br>
+                    <span>3. 喜好3-燒烤</span>
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

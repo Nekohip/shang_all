@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天外天精緻鍋物</title>
+    <style>
+        body {
+            background-color: #fff8e7; /* 淺米黃色，柔和溫暖 */
+            font-family: "微軟正黑體", sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding-top: 60px;
+        }
+
+        h1 {
+            color: #b35b00;
+            letter-spacing: 2px;
+        }
+
+        #msg {
+            font-size: 1.2em;
+            color: #a35a00;
+            margin: 20px 0;
+        }
+
+        img {
+            width: 40%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>天外天精緻鍋物</h1>
+
+    <p id="msg">3 秒後將自動前往 天外天 精緻鍋物官網...</p>
+
+    <img src="../images/day.jpg" alt="天外天精緻鍋物">
+
+    <script>
+        let sec = 3;
+        const msg = document.getElementById("msg");
+
+        const timer = setInterval(() => {
+            sec--;
+            msg.textContent = `${sec} 秒後將自動前往 天外天 精緻鍋物官網...`;
+            if (sec <= 0) {
+                clearInterval(timer);
+                window.location.href = "https://www.twtain.com/";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
