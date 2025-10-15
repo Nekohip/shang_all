@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO.Compression;
+
 namespace CircleArea
 {
     class Circle
@@ -10,14 +12,24 @@ namespace CircleArea
             r = Convert.ToDouble(Console.ReadLine());
         }
 
-        public void 
+        public double arena()
+        {
+            return r * r * 3.1415926;
+        }
+
+        public void display()
+        {
+            Console.Write("面積:{0}", arena());
+        }
     }
     //Main
     class CircleArea
     {
         static void Main(string[] args)
         {
-
+            Circle c = new Circle();
+            c.input();
+            c.display();
         }
     }
 }
