@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            color:green;
+            background-color:blue;  /*連結底色*/
+            text-decoration:none;  /*底線*/
+        }
+        /*訪問過的連結*/
+        a:visited{
+            color:pink;
+            background-color:transparent;
+            text-decoration:none;
+        }
+        /*鼠標移到上面*/
+        a:hover{
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        /*點擊*/
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        .box:hover{
+            background-color: lightpink;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Link Colors</h2>
+    <a href="..\s20251015\restarunt\f1.html" target="_blank">123</a>
+
+    <div class="box">
+    </div>
+</body>
+</html>
