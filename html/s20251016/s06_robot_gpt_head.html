@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>aNdRoId</title>
+
+  <style>
+    .boxa{
+      width:30vw;
+      height:25vh;
+      margin-top:100px;
+      background-color: rgb(36, 102, 146);
+      text-align: center;
+      font-size:150px ;
+      border-top-right-radius:50%;
+      border-top-left-radius:50%;
+      position: relative; /* for antenna absolute positioning */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: visible; /* allow antennas to show outside */
+    }
+
+    /* 天線共用樣式 */
+    .antenna{
+      position: absolute;
+      top: -6vh;                 /* 往上超出 boxa */
+      width: 10px;                /* 線條粗細 */
+      height: 6vh;               /* 線條長度（用 vh/vw 使之跟畫面比例） */
+      background: #243c4e;       /* 線條顏色，和頭部顏色協調 */
+      border-radius: 2px;
+      transform-origin: bottom center;
+      z-index: 5;
+      animation: antenna-sway 2s ease-in-out infinite;
+    }
+
+    /* 左右位置 */
+    .antenna-left{
+      left: 22%;                 /* 控制左右位置，視需要微調 */
+      transform: rotate(-18deg);
+      animation-delay: 0s;
+    }
+    .antenna-right{
+      right: 22%;
+      transform: rotate(18deg);
+      animation-delay: 0.2s;
+    }
+
+    /* 天線頂端的圓珠（用偽元素） */
+    .antenna::after{
+      content: "";
+      position: absolute;
+      top: -1.2vh;               /* 圓球和線段相接 */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.4vh;
+      height: 1.4vh;
+      background: #f2f9ff;       /* 球的顏色（淡） */
+      border-radius: 50%;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.12);
+    }
+
+    /* 輕微擺動動畫 */
+    @keyframes antenna-sway {
+      0%   { transform: rotate(-18deg); }
+      50%  { transform: rotate(-8deg); }
+      100% { transform: rotate(-18deg); }
+    }
+    /* 右邊動畫同方向但延遲（覆寫 angle 範例） */
+    .antenna-right { animation-name: antenna-sway-right; }
+    @keyframes antenna-sway-right {
+      0%   { transform: rotate(18deg); }
+      50%  { transform: rotate(8deg); }
+      100% { transform: rotate(18deg); }
+    }
+
+    /* 你原本的其他樣式（保持不變） */
+    .boxb{
+      width:30vw;
+      height:60vh;
+      margin-top:20px;
+      background-color: rgb(36, 102, 146);
+      border-bottom-right-radius:10%;
+      border-bottom-left-radius:10%;
+    }
+    .boxc{
+      width:8vw;
+      height:50vh;
+      margin-bottom:50px;
+      margin-left:25px;
+      background-color: rgb(36, 102, 146);
+      border-top-right-radius:44%;
+      border-top-left-radius:44%;
+      border-bottom-right-radius:44%;
+      border-bottom-left-radius:44%;
+    }
+    .boxd{
+      width:8vw;
+      height:50vh;
+      margin-bottom:50px;
+      margin-right:25px;
+      background-color: rgb(36, 102, 146);
+      border-top-right-radius:44%;
+      border-top-left-radius:44%;
+      border-bottom-right-radius:44%;
+      border-bottom-left-radius:44%;
+    }
+    .boxe{
+      width:8vw;
+      height:30vh;
+      margin:auto;
+      background-color: rgb(36, 102, 146);
+      border-bottom-right-radius:44%;
+      border-bottom-left-radius:44%;
+    }
+    .boxf{
+      width:8vw;
+      height:30vh;
+      margin:auto;
+      background-color: rgb(36, 102, 146);
+      border-bottom-right-radius:44%;
+      border-bottom-left-radius:44%;
+    }
+
+    table,
+    tr,
+    td{
+      border-collapse:collapse;
+    }
+    td{
+      width:10px;
+      height:50px;
+    }
+    table{
+      width:50%;
+      text-align: center;
+      margin:auto;
+    }
+
+    /* 小螢幕時微調（可選） */
+    @media (max-width: 600px){
+      .boxa { font-size: 80px; }
+      .antenna{ height: 5vh; top: -5.5vh; }
+      .antenna::after{ width: 1.2vh; height: 1.2vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <tr>
+      <td></td>
+
+      <td colspan="2" class="box12">
+        <div class="boxa">
+          <!-- 我在這裡新增兩個 span 當天線 -->
+          <span class="antenna antenna-left"></span>
+          <span class="antenna antenna-right"></span>
+
+          (。∀。)
+        </div>
+      </td>
+
+      <td></td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">
+        <div class="boxd"></div>
+      </td>
+
+      <td colspan="2" rowspan="2" class="box22">
+        <div class="boxb"></div>
+      </td>
+
+      <td rowspan="2">
+        <div class="boxc"></div>
+      </td>
+    </tr>
+
+    <tr></tr>
+
+    <tr>
+      <td></td>
+
+      <td rowspan="2">
+        <div class="boxf"></div>
+      </td>
+
+      <td rowspan="2">
+        <div class="boxe"></div>
+      </td>
+
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+</body>
+</html>
