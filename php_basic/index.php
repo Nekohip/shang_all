@@ -29,6 +29,9 @@
 <p>
     <a href="prac3_for.php">3.99乘法表</a>
 </p>
-
+<h1>PHP作業</h1>
+<p>
+    <a href="homework1.php">1.99乘法表</a>
+</p>
 </body>
 </html>
