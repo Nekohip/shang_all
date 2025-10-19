@@ -19,7 +19,8 @@
 <p>
     <a href="ch4_for.php">第四章 for 重複結構</a>
 </p>
-<h1>PHP程式練習</h1>
+
+<h1>PHP練習</h1>
 <p>
     <a href="prac1_if.php">1.If Else if</a>
 </p>
@@ -29,9 +30,21 @@
 <p>
     <a href="prac3_for.php">3.99乘法表</a>
 </p>
+
 <h1>PHP作業</h1>
 <p>
     <a href="homework1.php">1.99乘法表</a>
+</p>
+<p>
+    <a href="homework2.php">2.字串查找</a>
+</p>
+<p>
+    <a href="homework3.php">3.形狀</a>
+</p>
+
+<h1>語法測試</h1>
+<p>
+    <a href="test.php">語法測試</a>
 </p>
 </body>
 </html>

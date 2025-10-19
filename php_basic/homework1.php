@@ -67,6 +67,7 @@
             }
             echo "</tr>";
         }
+ 
     ?>
     </table>
     </div>
