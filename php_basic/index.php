@@ -42,6 +42,11 @@
     <a href="homework3.php">3.形狀</a>
 </p>
 
+<h1>老師解題</h1>
+<p>
+    <a href="teacher3.php">3.形狀</a>
+</p>
+
 <h1>語法測試</h1>
 <p>
     <a href="test.php">語法測試</a>

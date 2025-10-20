@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comb</title>
+    <style>
+        /* 兄弟選擇器(影響指定的Class下面的所有Class) */
+        .a~div{
+            color: lightseagreen;
+        }
+        /* 子孫選擇器(指定下一層，只有這個有用) */
+        .a>p{
+            color: lightcoral;
+        }
+        .b>p{
+            color:blueviolet;
+        }
+        .c>p{
+            color:rgb(217, 236, 39);
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        劉備
+        <p>
+            &emsp;劉封
+            <div>
+                &emsp;&emsp;劉產
+            </div>
+        </p>
+        <p>
+            &emsp;劉禪
+        </p>
+    </div>
+    <div class="b">
+        關羽
+        <p>
+            &emsp;關平
+        </p>
+        <p>
+            &emsp;關興
+        </p>
+    </div>
+    <div class="c">
+        張飛
+        <p>
+            &emsp;張苞
+        </p>
+        <p>
+            &emsp;張紹
+        </p>
+    </div>
+
+</body>
+</html>

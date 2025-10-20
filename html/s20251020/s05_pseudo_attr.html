@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color:rgb(58, 155, 63);
+        }
+        .box{
+            width: 60%;
+            height: 600px;
+            background-color:blueviolet;
+            text-align: center;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        input:focus{
+            background-color: aqua;
+        }
+        /* .input-text{
+            background-color:lightgreen;
+        }
+        .input-number{
+            background-color:blanchedalmond;
+        } */
+         
+        /* 屬性選擇 */
+        input[type="text"]{
+            background-color:lightgreen;
+        }
+        input[type="number"]{
+            background-color:blanchedalmond;
+        }
+        .input-number{
+            width:50%;
+            height:5px;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="">linku_sutaato</a>
+    <div class="box">
+        <form action="">
+            <p>
+                <label for="">帳號</label>
+                <input class="input-text" type="text" name="" id="">
+            </p>
+            <p>
+                <label for="">密碼</label>
+                <input class="input-number" type="text" name="" id="">
+            </p>
+            <p>
+                <label for="">驗證碼</label>
+                <input class="input-number" type="number" name="" id="">
+            </p>
+            <p>
+                <input type="submit" value="submit">
+            </p>
+        </form>
+    </div>
+</body>
+</html>

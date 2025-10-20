@@ -108,12 +108,15 @@
             }
         }
 
-        echo "<br>6.矩形<br><br>";
+        echo "<br>6.矩形2(直覺)<br><br>";
 
-        $n6 = 7;
-        for($i = 1; $i <= $n6; $i++)
+        $n6 = 21;
+        $sp1 = 0;
+        $sp2 = $n6 - 4;
+
+        for($i = 1; $i <= ($n6+1)/2; $i++)
         {
-            if($i == 1 || $i == $n6)
+            if($i == 1)
             {
                 for($j = 0 ; $j < $n6; $j++)
                 {
@@ -121,17 +124,97 @@
                 }
                 echo "<br>";
             }
-            else
+            else if($i != ($n6 + 1)/2)
             {                
                 echo "*";
-                for($j = 0 ; $j < $n6 - 2; $j++)
+                for($j = 0 ; $j < $sp1; $j++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                for($k = 0 ; $k < $sp2; $k++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                for($l = 0 ; $l < $sp1; $l++)
                 {
                     echo "&ensp;";
                 }
                 echo "*";
                 echo "<br>";
+                $sp1+=1;
+                $sp2-=2;
+            }
+            else
+            {
+                echo "*";
+                for($m = 0 ; $m < $sp1; $m++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                for($n = 0 ; $n < $sp1; $n++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
             }
         }
+        
+        // echo "<br>$sp1 $sp2<br>";
+        echo "<br>";
+        $sp1-=1;
+        $sp2+=2;
+
+        for($i = 1; $i <= $n6-($n6+1)/2; $i++)
+        {
+            if($i == $n6-($n6+1)/2)
+            {
+                for($j = 0 ; $j < $n6; $j++)
+                {
+                    echo "*";
+                }
+                echo "<br>";
+            }
+            else if($i != ($n6 + 1)/2)
+            {                
+                echo "*";
+                for($j = 0 ; $j < $sp1; $j++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                for($k = 0 ; $k < $sp2; $k++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                for($l = 0 ; $l < $sp1; $l++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                echo "<br>";
+                $sp1-=1;
+                $sp2+=2;
+            }
+            else
+            {
+                echo "*";
+                for($m = 0 ; $m < $sp1; $m++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+                for($n = 0 ; $n < $sp1; $n++)
+                {
+                    echo "&ensp;";
+                }
+                echo "*";
+            }
+        }
+        echo ""
     ?>
 </body>
 </html>
