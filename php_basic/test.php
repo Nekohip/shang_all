@@ -9,9 +9,10 @@
     <?php
         $string = "I am naosato.";
         $search = "nao";
-        $search_len = mb_strlen($search);
+        $search_len = mb_strlen("12345 6");
+        echo "$search_len";
         $e = mb_substr($string ,3);
-        echo "$e";
+        // echo "$e";
     ?>
 </body>
 </html>

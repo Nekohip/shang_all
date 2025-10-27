@@ -17,6 +17,7 @@
         $pos= "";
         $count = 0;
         //用"被找字串長度"和"要找的字串長度"計算要找幾次
+        //mb_strlen("字串") >> 計算字串字數，從1開始計數
         for($i = 0; $i < mb_strlen($str) - mb_strlen($search) + 1; $i++)
         {
             //mb_substr(<目標字串>, <從i開始>, <x字後結束>) 回傳字串中"i~x"間的字串

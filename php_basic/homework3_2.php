@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>形狀</title>
+    <style>
+        *{
+            /*使用每個字都一樣大的字型*/
+            font-family:'Courier New', 'Courier', 'monospace';
+        }
+    </style>
 </head>
 <body>
+
     <?php
         echo "1.直角三角形<br><br>";
 
@@ -31,211 +38,110 @@
             echo "<br>";
         }
 
-        echo "<br>3.正三角形<br><br>";
-        $n3 = 5;
-        $m = 1;
-        for($i = $n3 ;$i > 0; $i--)
+        echo "<br>3.正三角形-老師解<br><br>";
+        //2i+1一定是奇數
+        $n3 = 7;
+        for($i = 0 ;$i < $n3; $i++)
         {
-            for($j = $i - 1; $j > 0; $j--)
+            for($j = 0 ; $j < $n3 - $i ; $j++)
             {
-                echo "&ensp;";
+                echo "&nbsp";
             }
-            for($k = 0; $k < $m; $k++)
+            for($k = 0; $k < (2 * $i + 1); $k++)
             {
                 echo "*";
             }
             echo "<br>";
-            $m += 2;
         }
 
         echo "<br>4.菱形<br><br>";
 
-        $n4 = 5;
-        $m = 1;
-        for($i = $n4 ;$i > 0; $i--)
+        //2i+1一定是奇數
+        $n4 = 8;
+        for($i = 0 ;$i < $n4; $i++)
         {
-            for($j = $i - 1; $j > 0; $j--)
+            for($j = 0 ; $j < $n4 - $i ; $j++)
             {
-            echo "&ensp;";
+                echo "&nbsp";
             }
-            for($k = 0; $k < $m; $k++)
-            {
-            echo "*";
-            }
-            echo "<br>";
-            $m += 2;
-        }
-
-        $m -= 4;
-        $n4 -= 1;
-
-        for($i = 1 ;$i <= $n4; $i++)
-        {
-            for($j = $i; $j > 0; $j--)
-            {
-                echo "&ensp;";
-            }
-            for($k = 0; $k < $m; $k++)
+            $count = 2 * $i + 1;
+            for($k = 0; $k < $count; $k++)
             {
                 echo "*";
             }
             echo "<br>";
-            $m -= 2;
+        }
+        $count -= 2;
+
+        for($i = 0 ;$i < $n4 - 1; $i++)
+        {
+            for($j = 0; $j < $i + 2; $j++)
+            {
+                echo "&nbsp";
+            }
+            for($k = 0; $k < $count; $k++)
+            {
+                echo "*";
+            }
+            echo "<br>";
+            $count -= 2;
         }
 
-        echo "<br>5.矩形<br><br>";
+        echo "<br>4.菱形-老師解<br><br>";
 
-        $n5 = 7;
-        for($i = 1; $i <= $n5; $i++)
+        $x = 10;  //列數
+        $y = 0;
+
+        //菱形列數一定奇數，列數是偶數幫他+1
+        if($x % 2 == 0)
         {
-            if($i == 1 || $i == $n5)
+            $x = $x + 1;
+        }
+
+        for($i = 0; $i < $x; $i++)
+        {
+            //floor(x) >> 無條件捨去
+            //當i過n的一半時y開始遞減
+            if($i > floor($x / 2))
             {
-                for($j = 0 ; $j < $n5; $j++)
-                {
-                    echo "*";
-                }
-                echo "<br>";
+                $y -= 1;
             }
             else
-            {                
-                echo "*";
-                for($j = 0 ; $j < $n5 - 2; $j++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                echo "<br>";
+            {
+                $y = $i;
             }
+
+            for($k = 0 ;$k < floor($x / 2) - $y; $k++)
+            {
+                echo "&nbsp";
+            }
+            for($j = 0 ; $j < 2 * $y + 1;$j++)
+            {
+                echo "*";
+            }
+            echo"<br>";
         }
 
         echo "<br>5.矩形(簡化)<br><br>";
 
-        $n5 = 9;
+        $n5 = 7;
         for($i = 1; $i <= $n5; $i++)
         {
             for($j = 1; $j <= $n5; $j++)
             {
-                if($i == 1 || $i == $n5 || ($i > 1) && ($j == 1 || $j == $n5))
+                if($i == 1 || $i == $n5 || $j == 1 || $j == $n5)
                 {
                     echo "*";
                 }
                 else
                 {
-                    echo "&ensp;";
+                    echo "&nbsp";
                 }
             }
             echo "<br>";
         }
 
-
-        echo "<br>6.矩形2(直覺，可變大小)<br><br>";
-
-        $n6 = 7;
-        $sp1 = 0;
-        $sp2 = $n6 - 4;
-
-        for($i = 1; $i <= ($n6+1)/2; $i++)
-        {
-            if($i == 1)
-            {
-                for($j = 0 ; $j < $n6; $j++)
-                {
-                    echo "*";
-                }
-                echo "<br>";
-            }
-            else if($i != ($n6 + 1)/2)
-            {                
-                echo "*";
-                for($j = 0 ; $j < $sp1; $j++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                for($k = 0 ; $k < $sp2; $k++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                for($l = 0 ; $l < $sp1; $l++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                echo "<br>";
-                $sp1+=1;
-                $sp2-=2;
-            }
-            else
-            {
-                echo "*";
-                for($m = 0 ; $m < $sp1; $m++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                for($n = 0 ; $n < $sp1; $n++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-            }
-        }
-        
-        // echo "<br>$sp1 $sp2<br>";
-        echo "<br>";
-        $sp1-=1;
-        $sp2+=2;
-
-        for($i = 1; $i <= $n6-($n6+1)/2; $i++)
-        {
-            if($i == $n6-($n6+1)/2)
-            {
-                for($j = 0 ; $j < $n6; $j++)
-                {
-                    echo "*";
-                }
-                echo "<br>";
-            }
-            else if($i != ($n6 + 1)/2)
-            {                
-                echo "*";
-                for($j = 0 ; $j < $sp1; $j++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                for($k = 0 ; $k < $sp2; $k++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                for($l = 0 ; $l < $sp1; $l++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                echo "<br>";
-                $sp1-=1;
-                $sp2+=2;
-            }
-            else
-            {
-                echo "*";
-                for($m = 0 ; $m < $sp1; $m++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-                for($n = 0 ; $n < $sp1; $n++)
-                {
-                    echo "&ensp;";
-                }
-                echo "*";
-            }
-        }
-
-        echo "<br>6.矩形2(簡化，不能變大小)<br><br>";
+        echo "<br>6.矩形(不能變大小)<br><br>";
 
         $n6 = 7;
         for($i = 1; $i <= $n6; $i++)
@@ -251,10 +157,80 @@
                 }
                 else
                 {
-                    echo "&ensp;";
+                    echo "&nbsp";
                 }
             }
             echo "<br>";
+        }
+
+        echo "<br>6.矩形-對角線(能改大小)<br><br>";
+
+        $n6 = 9;
+        if($n6 % 2 == 0)
+        {
+            $n6 += 1;
+        }
+        for($i = 1; $i <= $n6; $i++)
+        {
+            for($j = 1; $j <= $n6; $j++)
+            {
+                if($i == 1 || $i == $n6 || $i == $j || $i + $j == $n6 + 1 || $j == 1 || $j == $n6)
+                {
+                    echo "*";
+                }
+                else
+                {
+                    echo "&nbsp";
+                }
+            }
+            echo "<br>";
+        }
+
+        echo "<br>7.菱形-對角線<br><br>";
+
+        $x = 5;  //列數
+        $y = 0;
+
+        //菱形列數一定奇數，列數是偶數幫他+1
+        if($x % 2 == 0)
+        {
+            $x += 1;
+        }
+        //floor(x) >> 無條件捨去
+        $half = floor($x/2);
+
+        for($i = 0; $i < $x; $i++)
+        {
+            
+            //當i過n的一半時y開始遞減
+            if($i > $half)
+            {
+                $y -= 1;
+            }
+            else
+            {
+                $y = $i;
+            }
+
+            for($k = 0 ;$k < $half - $y; $k++)
+            {
+                echo "&nbsp";
+            }
+            for($j = 0 ; $j < 2 * $y + 1;$j++)
+            {
+                if(($i + $j) == $half || ($x - 1 - $j) == ($half - $i) 
+                    || ($i - $j) == $half || ($x - 1 - $j) == ($i - $half)
+                    || $j == $half  || $i == $half)
+                {
+                    echo "*";
+                }
+                else
+                {
+                    echo "&nbsp";
+                }
+            }
+
+            echo"<br>";
         }
 
     ?>
