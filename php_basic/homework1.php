@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>99</title>
     <style>
         table{
             width:50vw;
@@ -64,6 +64,10 @@
                 $k = $j * $i;
                 echo "$k";
                 echo "</td>";
+                if($j == $i)
+                {
+                    break;
+                }
             }
             echo "</tr>";
         }

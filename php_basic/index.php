@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>因蒂克斯</title>
 </head>
 <body>
 <h1>PHP程式基礎</h1>
@@ -36,13 +36,20 @@
     <a href="homework1.php">1.99乘法表</a>
 </p>
 <p>
-    <a href="homework2.php">2.字串查找</a>
+    <a href="homework2.php">2.字串查找</a><br>
+    <a href="homework2_2.php">2_2.字串查找_2</a><br>
+    <a href="homework2_3.php">2_3.字串查找_3</a><br>
 </p>
 <p>
-    <a href="homework3.php">3.形狀</a>
+    <a href="homework3.php">3.形狀</a><br>
+    <a href="homework3_2.php">3_2.形狀_2</a>
 </p>
 
 <h1>老師解題</h1>
+<p>
+    <a href="teacher2.php">2.99乘法表</a><br>
+    <a href="teacher2_test.php">2.99乘法表_test</a><br>
+</p>
 <p>
     <a href="teacher3.php">3.形狀</a>
 </p>
