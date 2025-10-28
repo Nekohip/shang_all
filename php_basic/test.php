@@ -7,7 +7,8 @@
 </head>
 <body>
     <?php
-    $a = rand()
+    $a = 2 % 10;
+    echo $a;
     ?>
 </body>
 </html>
