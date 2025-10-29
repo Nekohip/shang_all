@@ -71,20 +71,20 @@
     <h2>條件改成:count($group)<=6</h2><br>
 
     <?php
-        $group = [];
-        //判斷也能寫count($group)<=6，陣列有6個數之前都會重抽
-        for($j = 0; count($group)<=6; $j++)
+    $group = [];
+    //判斷也能寫count($group)<=6，陣列有6個數之前都會重抽
+    for($j = 0; count($group)<=6; $j++)
+    {
+        $num = rand(1, 38);
+        if(in_array($num,$group) == false)
         {
-            $num = rand(1, 38);
-            if(in_array($num,$group) == false)
-            {
-                $group[] = $num; 
-            }
+            $group[] = $num; 
         }
-        foreach($group as $g)
-        {
-           echo "$g  ";
-        }
+    }
+    foreach($group as $g)
+    {
+       echo "$g  ";
+    }
     ?>
 
     <hr>
