@@ -8,15 +8,18 @@
         *{
             box-sizing: border-box;
         }
+
         .box{
             margin: 50px 90px;
         }
+
         .container{
             width:80%;
             height:100%;
             background-color: rgb(0, 0, 0);
             display: inline-block; 
         }
+
         .nav{
             background-color: rgb(116, 115, 117);
             display: inline-block; 
@@ -28,9 +31,11 @@
             padding-top: 10px;
             vertical-align:top;
         }
+
         a{
             text-decoration: none;
         }
+
         .top{
             /* 固定位置 */
             position: fixed;
@@ -39,6 +44,15 @@
             right: 50px;
             text-decoration: none;
         }
+
+        .tag{
+            width:50px;
+            height:50px;
+            background-color: aqua;
+            margin: 5px 5px;
+            padding: 15px 0px;
+        }
+
         #ar:hover{
             color: red;
         }
@@ -93,12 +107,37 @@
 <body>
     
     <div class="nav">
-        <a href="#red" id="ar">red</a><br>
-        <a href="#green" id="ag">green</a><br>
-        <a href="#blue" id="ab">blue</a><br>
-        <a href="#pink" id="ap">pink</a><br>
-        <a href="#purple" id="apu">purple</a><br>
-        <a href="#yellow" id="ay">yellow</a><br>
+        <a href="#red" id="ar">
+            <div href="#red" class="tag">
+                red<br>
+            </div>
+        </a>
+        <a href="#green" id="ar">
+            <div class="tag">
+                green
+            </div>
+        </a>
+        <a href="#blue" id="ar">
+            <div class="tag">
+                blue
+            </div>
+        </a>
+        
+        <a href="#pink" id="ar">
+            <div class="tag">
+                pink
+            </div>
+        </a>
+        <a href="#purple" id="ar">
+            <div class="tag">
+                purple
+            </div>
+        </a>
+        <a href="#yellow" id="ar">
+            <div class="tag">
+                yellow
+            </div>
+        </a>
     </div>
     <div class="container">
 
