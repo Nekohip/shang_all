@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>bookmark-top</title>
     <style>
         *{
             box-sizing: border-box;
@@ -14,11 +14,19 @@
         .nav{
             background-color: rgb(218, 14, 207);
             display: inline-block; 
-            margin-left:100px;
+            margin-left:189px;
             width:150px;
             height:25px;
             text-align: center;
             padding-top: 2px;
+        }
+        .top{
+            /* 固定位置 */
+            position: fixed;
+            /* 調整位置 */
+            bottom: 50px;
+            right: 50px;
+            text-decoration: none;
         }
         #red{
             width:80%;
@@ -35,14 +43,23 @@
             height:1000px;
             background-color: rgb(44, 44, 90);
         }
+        #ar:hover{
+            color: red;
+        }
+        #ag:hover{
+            color: green;
+        }
+        #ab:hover{
+            color: rgb(9, 149, 214);
+        }
     </style>
     </style>
 </head>
 <body>
     <div class="nav">
-        <a href="#red">red</a>
-        <a href="#green">green</a>
-        <a href="#blue">blue</a>
+        <a href="#red" id="ar">red</a>
+        <a href="#green" id="ag">green</a>
+        <a href="#blue" id="ab">blue</a>
     </div>
 
     <div class="box" id="red">
@@ -56,6 +73,10 @@
     <div class="box" id="blue">
         
     </div>
+
+    <a href="#" class="top">
+        TOP
+    </a>
 
 </body>
 </html>
