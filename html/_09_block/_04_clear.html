@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*不允許浮動 left,right,both(防止float的圖片跑到此區塊)*/
+        .clear{
+            clear:both;
+        }
+
+        .box-l{
+            float:left;
+            width:150px;
+            height:150px;
+        }
+
+        .box-r{
+            float:right;
+            width:150px;
+            height:150px;
+        }
+
+        .b1{
+            background-color: lightblue;
+        }
+
+        .b2{
+            background-color:  lightpink;
+        }
+
+        .b3{
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="clear">
+        <div class="box-l b1">
+
+        </div>
+        <div class="box-l b2">
+
+        </div>
+        <div class="box-l b3">
+
+        </div>
+    </div>
+
+    <div class="clear">
+        <div class="box-r b1">
+
+        </div>
+        <div class="box-r b2">
+
+        </div>
+        <div class="box-r b3">
+
+        </div>
+    </div>
+</body>
+</html>
