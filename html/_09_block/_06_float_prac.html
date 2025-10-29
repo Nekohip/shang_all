@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>flowprac</title>
     <style>
         .clear{
             clear:both;
             width:80%;
             margin: auto;
-
         }
 
         .box{
@@ -19,9 +18,11 @@
 
         .b11{
             float: left;
-            width:100%;
+            width: 100%;
             height: 33vh;
             background-color:rgb(68, 68, 95);
+            /* hidden >> 圖片超出div的部分隱藏 */
+            overflow: auto;
         }
 
         .b21{
@@ -29,6 +30,7 @@
             width: 50%;
             height: 33vh;
             background-color:rgb(250, 215, 162);
+            overflow: hidden;
         }
 
         .b22{
@@ -36,97 +38,109 @@
             width:50%;
             height: 33vh;
             background-color:rgb(179, 139, 31);
+            overflow: hidden;
         }
         .b31{
             float: left;
-            width:33%;
+            width:33.3%;
             height: 33vh;
             background-color:rgb(56, 216, 77);
+            overflow: hidden;
         }
         .b32{
             float: left;
-            width:33%;
+            width:33.3%;
             height: 33vh;
             background-color:rgb(57, 206, 144);
+            overflow: hidden;
         }
         .b33{
             float: right;
-            width:33%;
+            width:33.3%;
             height: 33vh;
             background-color:rgb(61, 100, 60);
+            overflow: hidden;
         }
         .b41{
             float: left;
             width:25%;
             height: 33vh;
             background-color:rgb(144, 221, 221);
+            overflow: hidden;
         }
         .b42{
             float: left;
             width:25%;
             height: 33vh;
             background-color:rgb(56, 110, 103);
+            overflow: hidden;
         }
         .b43{
             float: right;
             width:25%;
             height: 33vh;
             background-color:rgb(63, 132, 160);
+            overflow: hidden;
         }
         .b44{
             float: right;
             width:25%;
             height: 33vh;
             background-color:rgb(36, 179, 179);
+            overflow: hidden;
+        }
+        .img_w{
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <div class="clear">
         <div class="box b11">
-
+            <img src="https://lipsum.app/id/240/1600x900" >
         </div>
     </div>
 
     <div class="clear">
         <div class="box b21">
-
+            <img src="https://lipsum.app/id/230/800x450" class="img_w" >
         </div>
 
         <div class="box b22">
-
+            <img src="https://lipsum.app/id/202/800x450" class="img_w">
         </div>
     </div>
 
     <div class="clear">
         <div class="box b31">
-
+            <img src="https://lipsum.app/id/20/800x450" class="img_w">
         </div>
 
         <div class="box b32">
-
+            <img src="https://lipsum.app/id/241/800x450" class="img_w">
         </div>
 
         <div class="box b33">
-
+            <img src="https://lipsum.app/id/10/800x450" class="img_w">
         </div>
     </div>
 
     <div class="clear">
         <div class="box b41">
-
+            <img src="https://lipsum.app/id/108/800x450" class="img_w">
         </div>
 
         <div class="box b42">
-
+            <img src="https://lipsum.app/id/107/800x450" class="img_w">
         </div>
         
         <div class="box b43">
-
+            <img src="https://lipsum.app/id/160/800x450" class="img_w">
         </div>
 
         <div class="box b44">
-
+            <img src="https://lipsum.app/id/150/800x450" class="img_w">
         </div>
     </div>
 </body>
