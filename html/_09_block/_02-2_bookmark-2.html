@@ -9,17 +9,54 @@
             box-sizing: border-box;
         }
         .box{
-            /* margin-left: auto; */
+            margin: 50px 90px;
+        }
+        .container{
+            width:80%;
+            height:100%;
+            background-color: rgb(0, 0, 0);
+            display: inline-block; 
         }
         .nav{
-            background-color: rgb(218, 14, 207);
+            background-color: rgb(116, 115, 117);
             display: inline-block; 
-            margin-top:100px;
-            margin-left:0px;
+            margin-top:0px;
+            margin-left:134px;
             width:60px;
             height:500px;
             text-align: center;
             padding-top: 10px;
+            vertical-align:top;
+        }
+        #ar:hover{
+            color: red;
+            /* background-color: transparent; */
+            text-decoration: underline;
+        }
+        #ag:hover{
+            color: green;
+            /* background-color: transparent; */
+            text-decoration: underline;
+        }
+        #ab:hover{
+            color: blue;
+            /* background-color: transparent; */
+            text-decoration: underline;
+        }
+        #ap:hover{
+            color: rgb(228, 113, 170);
+            /* background-color: transparent; */
+            text-decoration: underline;
+        }
+        #apu:hover{
+            color: rgb(211, 7, 238);
+            /* background-color: transparent; */
+            text-decoration: underline;
+        }
+        #ay:hover{
+            color: rgb(206, 226, 21);
+            /* background-color: transparent; */
+            text-decoration: underline;
         }
         #red{
             width:80%;
@@ -36,27 +73,62 @@
             height:1000px;
             background-color: rgb(44, 44, 90);
         }
+        #pink{
+            width:80%;
+            height:1000px;
+            background-color: rgb(216, 144, 174);
+        }
+        #purple{
+            width:80%;
+            height:1000px;
+            background-color: rgb(108, 54, 124);
+        }
+        #yellow{
+            width:80%;
+            height:1000px;
+            background-color: rgb(121, 129, 10);
+        }
     </style>
     </style>
 </head>
 <body>
     
-
-    <div class="box" id="red">
-        <div class="nav">
-        <a href="#red">red</a><br>
-        <a href="#green">green</a><br>
-        <a href="#blue">blue</a><br>
+    <div class="nav">
+        <a href="#red" id="ar">red</a><br>
+        <a href="#green" id="ag">green</a><br>
+        <a href="#blue" id="ab">blue</a><br>
+        <a href="#pink" id="ap">pink</a><br>
+        <a href="#purple" id="apu">purple</a><br>
+        <a href="#yellow" id="ay">yellow</a><br>
     </div>
-    </div>
+    <div class="container">
 
-    <div class="box" id="green">
+        <div class="box" id="red">
         
+        </div>
+
+        <div class="box" id="green">
+
+        </div>
+
+        <div class="box" id="blue">
+
+        </div>
+
+        <div class="box" id="pink">
+
+        </div>
+
+        <div class="box" id="purple">
+
+        </div>
+
+        <div class="box" id="yellow">
+
+        </div>
+
     </div>
 
-    <div class="box" id="blue">
-        
-    </div>
-
+    
 </body>
 </html>
