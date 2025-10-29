@@ -28,35 +28,34 @@
             padding-top: 10px;
             vertical-align:top;
         }
+        a{
+            text-decoration: none;
+        }
+        .top{
+            /* 固定位置 */
+            position: fixed;
+            /* 調整位置 */
+            bottom: 50px;
+            right: 50px;
+            text-decoration: none;
+        }
         #ar:hover{
             color: red;
-            /* background-color: transparent; */
-            text-decoration: underline;
         }
         #ag:hover{
             color: green;
-            /* background-color: transparent; */
-            text-decoration: underline;
         }
         #ab:hover{
-            color: blue;
-            /* background-color: transparent; */
-            text-decoration: underline;
+            color: rgb(9, 149, 214);
         }
         #ap:hover{
             color: rgb(228, 113, 170);
-            /* background-color: transparent; */
-            text-decoration: underline;
         }
         #apu:hover{
             color: rgb(211, 7, 238);
-            /* background-color: transparent; */
-            text-decoration: underline;
         }
         #ay:hover{
             color: rgb(206, 226, 21);
-            /* background-color: transparent; */
-            text-decoration: underline;
         }
         #red{
             width:80%;
@@ -127,8 +126,12 @@
 
         </div>
 
-    </div>
+        <!-- 回到頁首 href給'#'' -->
+        <a href="#" class="top">
+            TOP
+        </a>
 
-    
+    </div>
+ 
 </body>
 </html>
