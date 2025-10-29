@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block</title>
+    <style>
+        a{
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+            /*發現不能調大小或換行時，試試這些*/
+            /* 換行，能調大小 */ 
+            display: block;  
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+            /* 不換行，不能調大小 */
+            display: inline; 
+        }
+        .ib{
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+            /* 不換行，能調大小 */
+            display: inline-block; 
+        }
+    </style>
+</head>
+<body>
+    <h2>inline vs block vs inline</h2>
+    <h3>inline 不換行，不能調大小</h3>
+    <p>span, a, img, button 是inline元素</p>
+
+    <a href="">linkA</a>
+    <a href="">linkB</a>
+    <a href="">linkC</a>
+
+    <hr>
+
+    <h3>block 換行，能調大小</h3>
+    <p>div, h1-h6, p 是block元素</p>    
+    <div>
+        123
+    </div>
+    <div>
+        456
+    </div>
+
+    <hr>
+
+    <h3>inline-block</h3>
+    <p>inline不換行，block可調大小</p>    
+    <div class="ib">
+        inline-block
+    </div>
+    <div class="ib">
+        inline-block
+    </div>
+
+</body>
+</html>
