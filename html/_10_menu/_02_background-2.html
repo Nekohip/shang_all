@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /*整頁背景圖片*/
+            background-image: url("https://picsum.photos/1920/1080/?random=10");
+            /* fixed:背景圖片不會隨著頁面的滾動而滾動 */ 
+            /* scroll:背景圖片會隨著頁面的滾動而滾動，圖片長度不夠會複製*/
+            background-attachment: fixed;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: lightblue;
+            border: 5px black solid;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .box1{
+            background-image: url('https://picsum.photos/1920/1080/?random=11');
+            /* 放大並裁切超出區塊的部分 */
+            background-size: cover;
+        }
+
+        .box2{
+            background-image: url('https://picsum.photos/1920/1080/?random=11');
+            /* 等比例縮小至寬度和區塊一致，空白部分複製填滿 */
+            background-size: contain;
+        }
+
+        .box3{
+            background-image: url('https://picsum.photos/1920/1080/?random=11');
+            background-size: contain;
+            /* 空白部分不複製填滿 */
+            background-repeat: no-repeat;
+        }
+
+        .box4{
+            background-image: url('https://picsum.photos/1920/1080/?random=11');
+            background-size: contain;
+            background-repeat: no-repeat;
+            /* 圖片置中 */ 
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+
+    </div>
+    <div class="box box2">
+
+    </div>
+    <div class="box box3">
+
+    </div>
+    <div class="box box4">
+
+    </div>
+</body>
+</html>
