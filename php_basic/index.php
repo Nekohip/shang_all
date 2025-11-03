@@ -22,6 +22,12 @@
 <p>
     <a href="ch5_array.php">第五章 陣列</a>
 </p>
+<p>
+    <a href="ch6_srting.php">第六章 字串</a>
+</p>
+<p>
+    <a href="ch7_time.php">第七章 時間日期</a>
+</p>
 
 <h1>PHP課堂練習</h1>
 <p>
