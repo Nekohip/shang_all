@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-    $a = 2 % 10;
-    echo $a;
+    echo date('Y-m-d' ,strtotime("now"))."<br>";
+    echo date('Y-m-d' ,strtotime("- 1 year",strtotime("now")))."<br>";
     ?>
 </body>
 </html>

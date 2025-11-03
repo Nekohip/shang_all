@@ -39,15 +39,14 @@ $birthday = "1999-08-29";
 //date("Y") >> 沒有指定時間戳就會取今天日期，所以回傳今年
 $bd_thisyear = date(date("Y")."-m-d", strtotime($birthday));
 //生日已過 > 生日+1年
+//strtotime("指令", 時間戳)，指令:now >> 今天時間戳, +1 year >> +時間戳一年
 if(strtotime("now") > strtotime($bd_thisyear))
 {
     $bd_thisyear = date("Y-m-d", strtotime("+1 year", strtotime($bd_thisyear)));
 }
-$days_to_bd = (abs(strtotime($bd_thisyear) - strtotime(date("Y-m-d"))) / (60*60*24)) - 1;
+$days_to_bd = (abs(strtotime($bd_thisyear) - strtotime(date("Y-m-d")))
+              / (60*60*24)) - 1;
 echo "距離下一次生日 $bd_thisyear 還有".$days_to_bd."天";
-
-
-
 ?>
 
 <hr>
