@@ -27,16 +27,25 @@ echo strtotime("now")-strtotime("2025-11-3");
 <?php
 $day1 = '2025-11-03 12:00:00';
 $day2 = '2025-11-07 12:00:00';
-
+//相差幾秒>轉成天數
 $gap = abs(strtotime($day1) - strtotime($day2)) / (60*60*24) - 1;
 echo $day1."與".$day2."之間有".$gap."天";
 ?> 
+
 <h3>計算距離自己下一次生日還有幾天</h3>
 <?php
 $birthday = "1999-08-29";
-//date(格式,日期字串) >> 格式化日期，date("Y") >> 替換今年年分
-$t = date(date("Y")."-m-d", strtotime($birthday));
-echo $t;
+//date(格式,時間戳) >> 格式化日期
+//date("Y") >> 沒有指定時間戳就會取今天日期，所以回傳今年
+$bd_thisyear = date(date("Y")."-m-d", strtotime($birthday));
+//生日已過 > 生日+1年
+if(strtotime("now") > strtotime($bd_thisyear))
+{
+    $bd_thisyear = date("Y-m-d", strtotime("+1 year", strtotime($bd_thisyear)));
+}
+$days_to_bd = (abs(strtotime($bd_thisyear) - strtotime(date("Y-m-d"))) / (60*60*24)) - 1;
+echo "距離下一次生日 $bd_thisyear 還有".$days_to_bd."天";
+
 
 
 ?>
