@@ -106,7 +106,7 @@
 
     foreach($tgdz as $i => $t)
     {
-        echo "$i:$t";
+         echo "$i:$t";
         echo "<br>";
     }
 
@@ -115,7 +115,7 @@
 
     <hr>
     
-    <h2>天干地支-公式解</h2><br>
+    <h2>天干地支-公式解</h2>
 
     <?php
     //ctrl+shift+p > join line >>直行變橫行
@@ -126,6 +126,28 @@
     $idx = $year - 4;
     echo "西元". $year . "年是" . $sky[$idx % 10] . $land[$idx % 12] . "年";
     ?>
- 
+
+    <hr>
+    
+    <h2>陣列元素移位</h2><br>
+
+    <?php
+    $a = [2,4,6,1,8,9];
+    $n = count($a) - 1;
+    echo 'n='.$n.'<br>';
+    for($i = 0; $i <= floor($n / 2); $i++)
+    {
+        $temp = $a[$i];  //i=0 n=4 a[0]
+        $a[$i] = $a[$n - $i];  //a[0] = a[4]
+        $a[$n - $i] = $temp;  //a[4]=a[0]
+    }
+
+    foreach ($a as $idx => $a)
+    {
+        echo '['.$idx.']'.$a.'<br>';
+    }
+    
+    ?>
+    
 </body>
 </html>
