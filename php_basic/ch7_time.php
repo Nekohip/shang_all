@@ -52,13 +52,31 @@ echo "距離下一次生日 $bd_thisyear 還有".$days_to_bd."天";
 <hr>
 
 <h2>利用date()函式的格式化參數，完成以下的日期格式呈現</h2>
-<li>2021/10/05</li>
-<li>10月5日 Tuesday</li>
-<li>2021-10-5 12:9:5</li>
-<li>2021-10-5 12:09:05</li>
-<li>今天是西元2021年10月5日 上班日(或假日)</li>
+<li>1.2021/10/05</li>
+<li>2.10月5日 Tuesday</li>
+<li>3.2021-10-5 12:09:05</li>
+<li>4.2021-10-5 12:9:5</li>
+<li>5.今天是西元2021年10月5日 上班日(或假日)</li>
+<br>
 
 <?php
 $date = "2021-10-05";
-echo date("Y/m/d", strtotime($date))
+echo "1.".date("Y/m/d", strtotime($date));
+echo "<br><br>";
+echo "2.".date("m月d日 l");
+echo "<br><br>";
+echo "3.".date("Y-m-d G:i:s");
+echo "<br><br>";
+echo "4.".date("Y-m-d G"); echo ":"; echo date("i")*1; echo ":"; echo date("s")*1;
+echo "<br><br>";
+echo "5."."今天是".date("Y年m月d日 ");
+if(date("N") >= 6)
+{
+    echo "假日";
+}
+else
+{
+    echo "上班日";
+}
+echo "<br><br>";
 ?>
