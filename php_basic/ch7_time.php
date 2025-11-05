@@ -99,10 +99,10 @@ echo "<br><br>";
     <?php
     // $month = date("m");
     // $year = date("Y");
-    $month = 2;
-    $year = date("Y");
+    $month = 11;
+    $year = 2025;
 
-    $firstday = date("N", strtotime(date("Y-{$month}-1")));
+    $firstday = date("N", strtotime(date("{$year}-{$month}-1")));
     echo "本月第一天是星期".$firstday;
 
     $days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
@@ -116,10 +116,14 @@ echo "<br><br>";
     }
 
     $thirty_days = 0;
-    if($month == 2 || $month == 4 || $month == 6 || $month == 9 
+    if($month == 4 || $month == 6 || $month == 9 
       || $month == 11)
     {
         $thirty_days = 1;
+    }
+    if($month == 2)
+    {
+        $thirty_days = 2;
     }
 
     for($i = 0; $i < 8; $i++)
@@ -143,8 +147,8 @@ echo "<br><br>";
             }
             else if($onemonth_days <= 30 && $thirty_days == 1 
                     || $onemonth_days <= 31 && $thirty_days == 0
-                    || $onemonth_days <= 29 && $month == 2 && $leap == 1
-                    || $onemonth_days <= 28 && $month == 2 && $leap == 0)
+                    || $onemonth_days <= 29 && $thirty_days == 2 && $leap == 1
+                    || $onemonth_days <= 28 && $thirty_days == 2 && $leap == 0)
             {
                 echo "<td>{$onemonth_days}</td>";
                 $onemonth_days++;
