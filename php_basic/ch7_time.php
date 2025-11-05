@@ -80,3 +80,78 @@ else
 }
 echo "<br><br>";
 ?>
+
+<hr>
+
+<h2>月曆</h2>
+<style>
+    table{
+        border-collapse:collapse;
+        width:80%;
+        
+    }
+    td{
+        border:1px solid black; 
+        height: 10vh;  
+    }
+</style>
+<table>
+    <?php
+    // $month = date("m");
+    // $year = date("Y");
+    $month = 2;
+    $year = date("Y");
+
+    $firstday = date("N", strtotime(date("Y-{$month}-1")));
+    echo "本月第一天是星期".$firstday;
+
+    $days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    $onemonth_days = 1;
+
+    $leap = 0;
+    if(($year % 4 == 0 && $year % 100 != 0) 
+       || ($year % 4 == 0 && $year % 100 == 0 && $year % 400 == 0))
+    {
+        $leap = 1;
+    }
+
+    $thirty_days = 0;
+    if($month == 2 || $month == 4 || $month == 6 || $month == 9 
+      || $month == 11)
+    {
+        $thirty_days = 1;
+    }
+
+    for($i = 0; $i < 8; $i++)
+    {
+        echo "<tr>";
+        for($j = 0; $j < 7; $j++)
+        {
+            if($i == 0)
+            {
+                // colspan是合併row
+                echo "<td colspan = '7'>".$year."年".$month."月"."</td>";
+                break;
+            }
+            else if($i == 1)
+            {
+                echo "<td>".$days[$j]."</td>";
+            }
+            else if($j < $firstday && $j != 7 && $i == 2)
+            {
+                echo "<td></td>";
+            }
+            else if($onemonth_days <= 30 && $thirty_days == 1 
+                    || $onemonth_days <= 31 && $thirty_days == 0
+                    || $onemonth_days <= 29 && $month == 2 && $leap == 1
+                    || $onemonth_days <= 28 && $month == 2 && $leap == 0)
+            {
+                echo "<td>{$onemonth_days}</td>";
+                $onemonth_days++;
+            }
+
+        }
+        echo "</tr>";
+    }
+    ?>
+</table>
