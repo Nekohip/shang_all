@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height:2000px;
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .container_top{
+            width: 100%;
+            height: 5vh;
+            background-color: rgb(122, 240, 175);
+            position: fixed;
+            top:0;
+            z-index: 1;
+            /* padding-left:100px; */
+        }
+
+        .top{
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            font-size: 30px;
+        }
+        
+        .container_top > a {
+            display:inline-block;
+            width: 10%;
+            height: 5vh;
+            background-color: rgb(170, 211, 194);
+            text-align: center;
+            font-size:30px;
+            padding-top:6px;
+            text-decoration: none;
+        }
+
+        .clear{
+            clear: both;
+            width: 70%;
+            margin:auto;
+        }
+
+        .container_mid{
+            margin-left:10px;
+            margin-top:100px;
+            width: 30%;
+            height: 55vh;
+            float:left;
+        }
+
+        .cm{
+            background-color: rgb(195, 235, 221);
+        }
+
+        .b1{
+            margin-left:653px;
+        }
+
+        .game_pic{
+            width:80%;
+            height: 60%;
+            position:relative;
+            left: 20px;
+            top: 30px;
+        }
+
+        .text-in-box{
+            margin-left: 46px;
+            margin-top: 82px;
+            font-size: 30px;
+        }
+
+        .plateform1{
+            background-color: rgb(255, 52, 2);
+            width:78px;
+            height:28px;
+            position:absolute;
+            right: -39px;
+            top: 0px;
+        }
+
+        .plateform2{
+            background-color: rgb(240, 239, 239);
+            width:78px;
+            height:28px;
+            position:absolute;
+            right: -39px;
+            top: 0px;
+        }
+
+        .plateform3{
+            background-color: rgb(166, 20, 224);
+            width:78px;
+            height:28px;
+            position:absolute;
+            right: -39px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container_top">
+        <a href="#ns2" class="b1">NS2</a>
+        <a href="#ps5">PS5</a>
+        <a href="#pc">PC</a>
+    </div >
+
+    <div class = "top">
+        <a href="#">
+            ^TOP^
+        </a>
+    </div>
+
+    <!-- NS2 -->
+    <div class = "clear" id="ns2">
+        <a href="https://buy.gamer.com.tw/atmItem.php?sn=40547" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/zelda.png" >
+                <div class="plateform1">NS2</div>
+            </div>
+                <div class="text-in-box">薩爾達無雙 封印戰記</div>
+        </div>
+        </a>
+
+        <a href="https://buy.gamer.com.tw/atmItem.php?sn=40294" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/mhs3.png" >
+                <div class="plateform1">NS2</div>
+            </div>
+                <div class="text-in-box">魔物獵人 物語 3：命運雙龍</div>
+        </div>
+        </a>
+
+        <a href="https://buy.gamer.com.tw/atmItem.php?sn=40392" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/p3r.png" >
+                <div class="plateform1">NS2</div>
+            </div>
+                <div class="text-in-box">女神異聞錄 3 Reload</div>
+        </div>
+        </a>
+    </div>
+
+    <!-- PS5 -->
+    <div class = "clear" id="ps5">
+        <a href="https://buy.gamer.com.tw/atmItem.php?sn=40511" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/ab.png" >
+                <div class="plateform2">PS5</div>
+            </div>
+                <div class="text-in-box">宇宙機器人</div>
+        </div>
+        </a>
+
+        <a href="https://buy.gamer.com.tw/atmItem.php?sn=40515" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/ds2.png" >
+                <div class="plateform2">PS5</div>
+            </div>
+                <div class="text-in-box">死亡擱淺2</div>
+        </div>
+        </a>
+
+        <a href="https://buy.gamer.com.tw/atmItem.php?sn=40472" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/zou.png" >
+                <div class="plateform2">PS5</div>
+            </div>
+                <div class="text-in-box">咒</div>
+        </div>
+        </a>
+    </div>
+
+    <!-- PC -->
+    <div class = "clear" id="pc">
+        <a href="https://www.xbox.com/zh-TW/xbox-game-pass" >
+        <div class = "container_mid cm">  
+            <div class="game_pic">
+                <img src="./img/xgp.png" >
+                <div class="plateform3">PC</div>
+            </div>
+                <div class="text-in-box">XGP 3 Month</div>
+        </div>
+        </a>
+    </div>
+</body>
+</html>
