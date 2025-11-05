@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲商店 - Game Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+        }
+
+        /* 導航列 */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: "🎮";
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* 分類標題 */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .platform-badge {
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .badge-ns2 { background: linear-gradient(135deg, #ff3402 0%, #ff6b40 100%); }
+        .badge-ps5 { background: linear-gradient(135deg, #0070cc 0%, #0099ff 100%); }
+        .badge-pc { background: linear-gradient(135deg, #a620e0 0%, #c850ff 100%); }
+
+        /* 產品網格 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 產品卡片 */
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-image-container {
+            position: relative;
+            padding-top: 75%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow: hidden;
+        }
+
+        .product-image-container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image-container img {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .platform-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .tag-ns2 { background: #ff3402; }
+        .tag-ps5 { background: #0070cc; }
+        .tag-pc { background: #a620e0; }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            min-height: 2.8em;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 返回頂部按鈕 */
+        .back-to-top {
+            position: fixed;
+            right: 40px;
+            bottom: 40px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Game Shop</a>
+            <ul class="nav-links">
+                <li><a href="#ns2">Nintendo Switch 2</a></li>
+                <li><a href="#ps5">PlayStation 5</a></li>
+                <li><a href="#pc">PC Gaming</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- NS2 區域 -->
+        <section class="category-section" id="ns2">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <span class="platform-badge badge-ns2">Nintendo Switch 2</span>
+                </h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/zelda.png" alt="薩爾達無雙 厄息戰記">
+                        <span class="platform-tag tag-ns2">NS2</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">薩爾達無雙 厄息戰記</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 1,790</span>
+                            <a href="https://buy.gamer.com.tw/atmItem.php?sn=40547" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/mhs3.png" alt="魔物獵人 物語 3">
+                        <span class="platform-tag tag-ns2">NS2</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">魔物獵人 物語 3：命運雙龍</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 1,890</span>
+                            <a href="https://buy.gamer.com.tw/atmItem.php?sn=40294" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/p3r.png" alt="女神異聞錄 3 Reload">
+                        <span class="platform-tag tag-ns2">NS2</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">女神異聞錄 3 Reload</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 1,690</span>
+                            <a href="https://buy.gamer.com.tw/atmItem.php?sn=40392" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PS5 區域 -->
+        <section class="category-section" id="ps5">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <span class="platform-badge badge-ps5">PlayStation 5</span>
+                </h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/ab.png" alt="宇宙機器人">
+                        <span class="platform-tag tag-ps5">PS5</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">宇宙機器人</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 1,590</span>
+                            <a href="https://buy.gamer.com.tw/atmItem.php?sn=40511" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/ds2.png" alt="死亡擱淺2">
+                        <span class="platform-tag tag-ps5">PS5</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">死亡擱淺2</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 1,990</span>
+                            <a href="https://buy.gamer.com.tw/atmItem.php?sn=40515" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/zou.png" alt="咒">
+                        <span class="platform-tag tag-ps5">PS5</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">咒</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 1,290</span>
+                            <a href="https://buy.gamer.com.tw/atmItem.php?sn=40472" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PC 區域 -->
+        <section class="category-section" id="pc">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <span class="platform-badge badge-pc">PC Gaming</span>
+                </h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="./img/xgp.png" alt="Xbox Game Pass">
+                        <span class="platform-tag tag-pc">PC</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Xbox Game Pass - 3個月訂閱</h3>
+                        <div class="product-footer">
+                            <span class="product-price">NT$ 890</span>
+                            <a href="https://www.xbox.com/zh-TW/xbox-game-pass" class="buy-button">立即購買</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 返回頂部按鈕 -->
+    <a href="#" class="back-to-top">↑</a>
+</body>
+</html>
