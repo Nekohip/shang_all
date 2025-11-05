@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            
+        }
+        .b1{
+            background-color: lightcoral;
+            /* position會脫離排版 */
+            /* 移動位置 */
+            position:relative;
+            left:100px;
+        }
+        .b2{
+            background-color: lightskyblue;
+        }
+        .b3{
+            background-color: lightgoldenrodyellow;
+            /* 固定位置 */
+            position: fixed;
+            /* 從右邊開始推100px */
+            right: 10px;
+            bottom: 10px;
+        }
+        .b11{
+            /* 框框裡的框框，放在已有position的div */
+            background-color: lightgray;
+            position:absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box b1">
+        <div class = "b11">
+        
+        </div>
+    </div>
+
+    <div class = "box b2">
+
+    </div>
+
+    <div class = "box b3">
+        
+    </div> 
+</body>
+</html>
