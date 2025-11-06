@@ -87,20 +87,22 @@ echo "<br><br>";
 <style>
     table{
         border-collapse:collapse;
-        width:80%;
+        width:60%;
+        margin:auto;
         
     }
     td{
         border:1px solid black; 
-        height: 10vh;  
+        height: 10vh; 
+        text-align:center; 
     }
 </style>
 <table>
     <?php
     // $month = date("m");
     // $year = date("Y");
-    $month = 6;
-    $year = 2025;
+    $month = 2;
+    $year = 2012;
 
     $firstday = date("N", strtotime(date("{$year}-{$month}-1")));
     echo "本月第一天是星期".$firstday;
@@ -121,7 +123,7 @@ echo "<br><br>";
     {
         $thirty_days = 1;
     }
-    if($month == 2)
+    else if($month == 2)
     {
         $thirty_days = 2;
     }
