@@ -99,7 +99,7 @@ echo "<br><br>";
     <?php
     // $month = date("m");
     // $year = date("Y");
-    $month = 11;
+    $month = 6;
     $year = 2025;
 
     $firstday = date("N", strtotime(date("{$year}-{$month}-1")));
@@ -131,20 +131,24 @@ echo "<br><br>";
         echo "<tr>";
         for($j = 0; $j < 7; $j++)
         {
+            //年月
             if($i == 0)
             {
                 // colspan是合併row
                 echo "<td colspan = '7'>".$year."年".$month."月"."</td>";
                 break;
             }
+            //星期
             else if($i == 1)
             {
                 echo "<td>".$days[$j]."</td>";
             }
-            else if($j < $firstday && $j != 7 && $i == 2)
+            //本月第一天星期(一開始空幾格)
+            else if($j < $firstday && $firstday != 7 && $i == 2)
             {
                 echo "<td></td>";
             }
+            //決定天數
             else if($onemonth_days <= 30 && $thirty_days == 1 
                     || $onemonth_days <= 31 && $thirty_days == 0
                     || $onemonth_days <= 29 && $thirty_days == 2 && $leap == 1
