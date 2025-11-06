@@ -91,11 +91,17 @@ echo "<br><br>";
         margin:auto;
         
     }
+
     td{
         border:1px solid black; 
         height: 10vh; 
         text-align:center; 
     }
+
+    .color{
+        background-color: lightyellow;
+    }
+
     *{
         font-family:"monospace";
     }
@@ -105,7 +111,7 @@ echo "<br><br>";
     // $month = date("m");
     // $year = date("Y");
     //調整月曆年月
-    $month = 6;
+    $month = 11;
     $year = 2025;
     $firstday = date("N", strtotime(date("{$year}-{$month}-1")));
     echo "本月第一天是星期".$firstday;
@@ -150,7 +156,15 @@ echo "<br><br>";
             //第二列:星期
             else if($i == 1)
             {
-                echo "<td>".$days[$j]."</td>";
+                //六日紅色
+                if($j == 0||$j == 6)
+                {
+                    echo "<td class='color'>".$days[$j]."</td>";
+                }
+                else
+                {
+                    echo "<td>".$days[$j]."</td>";
+                } 
             }
 
             //第三列空格子合併
@@ -166,7 +180,15 @@ echo "<br><br>";
                     || $onemonth_days <= 29 && $thirty_days == 2 && $leap == 1
                     || $onemonth_days <= 28 && $thirty_days == 2 && $leap == 0)
             {
-                echo "<td>{$onemonth_days}</td>";
+                //六日紅色
+                if($j == 0||$j == 6)
+                {
+                    echo "<td class='color'>{$onemonth_days}</td>";
+                }
+                else
+                {
+                    echo "<td>{$onemonth_days}</td>";
+                }
                 $onemonth_days++;
             }
         }

@@ -26,7 +26,8 @@
     <a href="ch6_srting.php">第六章 字串</a>
 </p>
 <p>
-    <a href="ch7_time.php">第七章 時間日期</a>
+    <a href="ch7_time.php">第七章 時間日期</a><br>
+    <a href="calendarAI.php">月曆(AI)</a>
 </p>
 
 <h1>PHP課堂練習</h1>
