@@ -96,20 +96,25 @@ echo "<br><br>";
         height: 10vh; 
         text-align:center; 
     }
+    *{
+        font-family:"monospace";
+    }
 </style>
 <table>
     <?php
     // $month = date("m");
     // $year = date("Y");
-    $month = 2;
-    $year = 2012;
-
+    //調整月曆年月
+    $month = 6;
+    $year = 2025;
     $firstday = date("N", strtotime(date("{$year}-{$month}-1")));
     echo "本月第一天是星期".$firstday;
 
     $days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    //計日器
     $onemonth_days = 1;
 
+    //判斷閏年
     $leap = 0;
     if(($year % 4 == 0 && $year % 100 != 0) 
        || ($year % 4 == 0 && $year % 100 == 0 && $year % 400 == 0))
@@ -117,6 +122,7 @@ echo "<br><br>";
         $leap = 1;
     }
 
+    //判斷該月天數，0-31d, 1-30d, 2-28 or 29d
     $thirty_days = 0;
     if($month == 4 || $month == 6 || $month == 9 
       || $month == 11)
@@ -133,24 +139,28 @@ echo "<br><br>";
         echo "<tr>";
         for($j = 0; $j < 7; $j++)
         {
-            //年月
+            //第一列:年月
             if($i == 0)
             {
                 // colspan是合併row
                 echo "<td colspan = '7'>".$year."年".$month."月"."</td>";
                 break;
             }
-            //星期
+
+            //第二列:星期
             else if($i == 1)
             {
                 echo "<td>".$days[$j]."</td>";
             }
-            //本月第一天星期(一開始空幾格)
+
+            //第三列空格子合併
             else if($j < $firstday && $firstday != 7 && $i == 2)
             {
-                echo "<td></td>";
+                echo "<td colspan = {$firstday}></td>";
+                $j = $firstday - 1;
             }
-            //決定天數
+
+            //開始印日，到指定天數停
             else if($onemonth_days <= 30 && $thirty_days == 1 
                     || $onemonth_days <= 31 && $thirty_days == 0
                     || $onemonth_days <= 29 && $thirty_days == 2 && $leap == 1
@@ -159,7 +169,17 @@ echo "<br><br>";
                 echo "<td>{$onemonth_days}</td>";
                 $onemonth_days++;
             }
+        }
 
+        //最後一列空格子合併
+        if($onemonth_days == 31 && $thirty_days == 1 
+            || $onemonth_days == 32 && $thirty_days == 0
+            || $onemonth_days == 30 && $thirty_days == 2 && $leap == 1
+            || $onemonth_days == 29 && $thirty_days == 2 && $leap == 0)
+        {
+            echo "<td colspan = 6></td>";
+            echo "</tr>";
+            break;
         }
         echo "</tr>";
     }
