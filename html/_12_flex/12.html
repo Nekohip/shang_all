@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_practice</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width:80%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .c1{
+            height: 20vh;
+            background-color: lightsteelblue;
+        }
+
+        .c2{
+            height: 30vh;
+            background-color: lightgreen;
+            margin-top: 50px;
+        }
+
+        .item {
+           
+            background-color: lightgoldenrodyellow;
+            /* position: relative; */
+            text-align: center;
+        }
+
+        .i1{
+            width: 1200px;
+            height: 150px;
+        }
+
+        .i2{
+            width: 520px;
+            height: 230px;
+        }
+
+        .i3{
+            width: 275px;
+            height: 230px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container c1">
+        <div class="item i1">
+            <img src="https://picsum.photos/id/132/1300/150">
+        </div>
+    </div>
+    <div class="container c2">
+        <div class="item i2">
+            <img src="https://picsum.photos/id/130/520/230">
+        </div>
+        <div class="item i2">
+            <img src="https://picsum.photos/id/39/520/230">
+        </div>
+
+    </div>
+    <div class="container c2">
+        <div class="item i3">
+            <img src="https://picsum.photos/id/13/275/230">
+        </div>
+        <div class="item i3">
+            <img src="https://picsum.photos/id/141/275/230">
+        </div>
+        <div class="item i3">
+            <img src="https://picsum.photos/id/202/275/230">
+        </div>
+
+    </div>
+    <div class="container c2">
+        <div class="item i3">
+            <img src="https://picsum.photos/id/122/275/230">
+        </div>
+        <div class="item i3">
+            <img src="https://picsum.photos/id/52/275/230">
+        </div>
+        <div class="item i3">
+            <img src="https://picsum.photos/id/163/275/230">
+        </div>
+        <div class="item i3">
+            <img src="https://picsum.photos/id/120/275/230">
+        </div>
+
+    </div>
+</body>
+</html>
