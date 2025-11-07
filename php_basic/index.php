@@ -61,7 +61,7 @@
 </p>
 <p>
     <a href="calendar.php">4.月曆</a><br>
-    <a href="calendarAI.php">4.月曆(AI)</a><br>
+    <a href="calendar-2.php">4.月曆(頭尾空格填上下個月日期)</a><br>
     <a href="clandar_flexbox.php">4.月曆(flexbox)</a>
 </p>
 
@@ -76,7 +76,6 @@
 </p>
 <p>
     <a href="calendar_teacher.php">4.月曆</a><br>
-    <a href="calendar_teacher_color.php">4.月曆(上色)</a><br>
     <a href="calendar_t_inline.php">4.月曆(inline-block)</a>
 </p>
 <h1>語法測試</h1>

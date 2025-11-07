@@ -42,7 +42,7 @@ echo "<br>";
 $monthWeeks=ceil(($monthDays + $firstWeek)/7);
 echo "這個月有 ".$monthWeeks." 周";
 echo "<br>";
-//一日-一日星期(顯示上個月的尾幾日，填滿空格)
+//本月一日時間戳-一日星期(顯示上個月的尾幾日，填滿空格)
 $tableFirstDay=strtotime("-$firstWeek days",strtotime($firstDayMonth));
 echo "這個月曆第一格的日期為:". date("Y-m-d",$tableFirstDay);
 echo "<br>";
