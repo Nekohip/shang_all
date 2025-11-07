@@ -27,8 +27,6 @@
 </p>
 <p>
     <a href="ch7_time.php">第七章 時間日期</a><br>
-    <a href="ch7_time_2.php">第七章 時間日期(改)</a><br>
-    <a href="calendarAI.php">月曆(AI)</a>
 </p>
 
 <h1>PHP課堂練習</h1>
@@ -61,6 +59,11 @@
     <a href="homework3.php">3.形狀</a><br>
     <a href="homework3_2.php">3-2.形狀-2</a>
 </p>
+<p>
+    <a href="calendar.php">4.月曆</a><br>
+    <a href="calendarAI.php">4.月曆(AI)</a><br>
+    <a href="clandar_flexbox.php">4.月曆(flexbox)</a>
+</p>
 
 
 <h1>老師解題</h1>
@@ -71,7 +74,11 @@
 <p>
     <a href="teacher3.php">3.形狀</a>
 </p>
-
+<p>
+    <a href="calendar_teacher.php">4.月曆</a><br>
+    <a href="calendar_teacher_color.php">4.月曆(上色)</a><br>
+    <a href="calendar_t_inline.php">4.月曆(inline-block)</a>
+</p>
 <h1>語法測試</h1>
 <p>
     <a href="test.php">語法測試</a>
