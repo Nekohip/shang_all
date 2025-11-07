@@ -111,8 +111,8 @@ echo "<br><br>";
     // $month = date("m");
     // $year = date("Y");
     //調整月曆年月
-    $month = 11;
-    $year = 2025;
+    $month = 2;
+    $year = 2004;
     $firstday = date("N", strtotime(date("{$year}-{$month}-1")));
     echo "本月第一天是星期".$firstday;
 

@@ -27,6 +27,7 @@
 </p>
 <p>
     <a href="ch7_time.php">第七章 時間日期</a><br>
+    <a href="ch7_time_2.php">第七章 時間日期(改)</a><br>
     <a href="calendarAI.php">月曆(AI)</a>
 </p>
 
