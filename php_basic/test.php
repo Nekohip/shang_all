@@ -6,9 +6,18 @@
     <title>test</title>
 </head>
 <body>
-    <?php
-    echo date('Y-m-d' ,strtotime("now"))."<br>";
-    echo date('Y-m-d' ,strtotime("- 1 year",strtotime("now")))."<br>";
-    ?>
+    *{
+            box-sizing: border-box;
+        }
+        .container{
+            width:80%;
+            height: 80vh;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lightgray;
+        }
 </body>
 </html>
