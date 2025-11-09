@@ -30,8 +30,8 @@
     // $month = date("m");
     // $year = date("Y");
     //調整月曆年月
-    $month = 2;
-    $year = 2004;
+    $month = 11;
+    $year = 2025;
 
     $firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
     $firstday = strtotime(date("{$year}-{$month}-1"));
@@ -67,8 +67,10 @@
                     echo "<td>".$days[$j]."</td>";
                 } 
             }
+            //印日期
             else
             {
+                //非本月灰字，六日格變色
                 if(date('m', $all_days) < $month || date('m', $all_days) > $month)
                 {
                     if($j == 0 || $j == 6)
@@ -87,6 +89,7 @@
                     {
                         echo "<td class='color'>".date('d',$all_days)."</td>";
                     }
+                    //本月日
                     else
                     {
                         echo "<td>".date('d',$all_days)."</td>";
