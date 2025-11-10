@@ -22,8 +22,12 @@
         align-items: center;
     }
     .boxsize:hover,
-    .yearmonth:hover{
+    .yearmonth:hover {
         background-color: lightblue;
+    }
+    .boxsize:active,
+    .yearmonth:active {
+        background-color: royalblue;
     }
     .container{
         width:90%;
@@ -55,8 +59,8 @@
     // $month = date("m");
     // $year = date("Y");
     //調整月曆年月
-    $month = 11;
-    $year = 2025;
+    $month = 2;
+    $year = 2011;
 
     $firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
     $firstday = strtotime(date("{$year}-{$month}-1"));
@@ -92,15 +96,17 @@
             }
             else
             {
+                //開始印日
                 if(date('m', $all_days) < $month || date('m', $all_days) > $month)
                 {
+                    //非本月灰字，六日格變色
                     if($j == 0 || $j == 6)
                     {
-                        echo "<div class='boxsize color text_gray'>".date('d',$all_days)."</div>";
+                        echo "<div class='boxsize color text_gray'>".date('j',$all_days)."</div>";
                     }
                     else
                     {
-                        echo "<div class='boxsize text_gray'>".date('d',$all_days)."</div>";
+                        echo "<div class='boxsize text_gray'>".date('j',$all_days)."</div>";
                     }
   
                 }
@@ -108,11 +114,12 @@
                 {
                     if($j == 0 || $j == 6)
                     {
-                        echo "<div class='boxsize color'>".date('d',$all_days)."</div>";
+                        echo "<div class='boxsize color'>".date('j',$all_days)."</div>";
                     }
                     else
                     {
-                        echo "<div class='boxsize'>".date('d',$all_days)."</div>";
+                        //本月日
+                        echo "<div class='boxsize'>".date('j',$all_days)."</div>";
                     }
                 }
                 $all_days = strtotime("+1 day", $all_days);
