@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* body{
+    border: 1px solid black;
+    height: 768px;
+    width: 1024px;
+    margin: auto;
+} */
+
+.top {
+    /* background-color: lightblue; */
+    height: 65px;
+    width: 1024px;
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+
+.container {
+    /* background-color: lightcoral; */
+    height: 683px;
+    width: 1024px;
+    margin: auto;
+    display: flex;
+    
+}
+
+.container-l {
+    /* background-color: lightgoldenrodyellow; */
+    height: 100%;
+    width: 215px;
+    
+}
+
+
+.ltop{
+    height: 658px;
+    width: 215px;
+    /* background-color: lightgreen; */
+    border: 1px solid black;
+    border-right: 0px;
+}
+
+.ltop-text{
+    height: 52px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.lbottom{
+    height: 25px;
+    width: 215px;
+    /* background-color: lightgrey; */
+    border: 1px solid black;
+    border-top: 0px;
+    border-right: 0px;
+}
+
+.container-r {
+    /* background-color: lightgray; */
+    height: 100%;
+    width: 809px;
+    /* margin: auto; */
+}
+
+.rtop{
+    height: 29px;
+    width: 100%;
+    /* background-color: lightpink; */
+    border: 1px solid black;
+    border-bottom: 0px;
+    
+}
+
+.rbottom{
+    height: 654px;
+    width: 100%;
+    /* background-color: lightsalmon; */
+    border: 1px solid black;
+}
+
+.footer {
+    /* background-color: lightcyan; */
+    height: 20px;
+    width: 1024px;
+    margin: auto;
+    border: 1px solid black;
+    border-top: 0px;
+}
+
+.logo1{
+    width: 65px;
+    height :65px;
+}
+
+.logo2{
+    width: 884px;
+    height :65px;
+}
+
+.logo3{
+    width: 65px;
+    height :65px;
+}
+
+.menu1{
+    margin-left: 5px;
+}
+
+.ltop-text > a {
+    background: ;
+}
