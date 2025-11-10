@@ -53,7 +53,7 @@ img {
     border-right: 0px;
     display: flex;
     align-items: center;
-
+    justify-content: center;
 }
 
 .container-r {
@@ -61,6 +61,7 @@ img {
     height: 100%;
     width: 809px;
     /* margin: auto; */
+    
 }
 
 .rtop{
@@ -81,6 +82,7 @@ marquee{
     width: 100%;
     /* background-color: lightsalmon; */
     border: 1px solid black;
+    background-image: url("../images/0101.jpg");
 }
 
 .footer {
@@ -93,7 +95,6 @@ marquee{
 }
 
 .menu-title{
-
     /* height: 6vh; */
     font-size: 24px;
     color: #FF00FF;
