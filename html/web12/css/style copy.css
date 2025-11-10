@@ -1,14 +1,8 @@
 *{
     box-sizing: border-box;
     overflow: hidden;
+    font-family: "標楷體";
 }
-
-/* body{
-    border: 1px solid black;
-    height: 768px;
-    width: 1024px;
-    margin: auto;
-} */
 
 .top {
     /* background-color: lightblue; */
@@ -17,6 +11,10 @@
     margin: auto;
     border: 1px solid black;
     border-bottom: 0px;
+}
+
+img {
+    margin-left: 15px;
 }
 
 .container {
@@ -32,7 +30,6 @@
     /* background-color: lightgoldenrodyellow; */
     height: 100%;
     width: 215px;
-    
 }
 
 
@@ -42,13 +39,9 @@
     /* background-color: lightgreen; */
     border: 1px solid black;
     border-right: 0px;
-}
-
-.ltop-text{
-    height: 52px;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .lbottom{
@@ -58,6 +51,9 @@
     border: 1px solid black;
     border-top: 0px;
     border-right: 0px;
+    display: flex;
+    align-items: center;
+
 }
 
 .container-r {
@@ -73,7 +69,11 @@
     /* background-color: lightpink; */
     border: 1px solid black;
     border-bottom: 0px;
-    
+}
+
+marquee{
+    font-size: 24px;
+    color: #0000FF;
 }
 
 .rbottom{
@@ -92,25 +92,35 @@
     border-top: 0px;
 }
 
-.logo1{
-    width: 65px;
-    height :65px;
+.menu-title{
+
+    /* height: 6vh; */
+    font-size: 24px;
+    color: #FF00FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
 }
 
-.logo2{
-    width: 884px;
-    height :65px;
+.menu-container{
+    height:32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.logo3{
-    width: 65px;
-    height :65px;
+.menu{
+    background-image: url('../images/menu1.png');
+    background-repeat: no-repeat;
+    width:200px;
+    height:34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
 }
 
-.menu1{
-    margin-left: 5px;
-}
-
-.ltop-text > a {
-    background: ;
+.menu:hover {
+    background-image: url('../images/menu2.png');
 }

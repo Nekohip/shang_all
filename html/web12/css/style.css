@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     overflow: hidden;
+    font-family: "標楷體";
 }
 
 .top {
@@ -29,7 +30,6 @@ img {
     /* background-color: lightgoldenrodyellow; */
     height: 100%;
     width: 215px;
-    
 }
 
 
@@ -40,6 +40,7 @@ img {
     border: 1px solid black;
     border-right: 0px;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -50,6 +51,9 @@ img {
     border: 1px solid black;
     border-top: 0px;
     border-right: 0px;
+    display: flex;
+    align-items: center;
+
 }
 
 .container-r {
@@ -70,7 +74,6 @@ img {
 marquee{
     font-size: 24px;
     color: #0000FF;
-    font-family: '標楷體';
 }
 
 .rbottom{
@@ -90,8 +93,8 @@ marquee{
 }
 
 .menu-title{
-    font-family: "標楷體";
-    height: 6vh;
+
+    /* height: 6vh; */
     font-size: 24px;
     color: #FF00FF;
     display: flex;
@@ -100,8 +103,24 @@ marquee{
     text-decoration: underline;
 }
 
+.menu-container{
+    height:32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .menu{
     background-image: url('../images/menu1.png');
-    width:300px;
-    height:100px;
+    background-repeat: no-repeat;
+    width:200px;
+    height:34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.menu:hover {
+    background-image: url('../images/menu2.png');
 }
