@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: "標楷體";
+}
+
+.container {
+    /* background-color: lightcoral; */
+    height: 683px;
+    width: 1024px;
+    margin: auto;
+    display: flex;
+    background-image: url("../images/0101.jpg");
+    border: 1px solid black;
+}
