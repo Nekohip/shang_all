@@ -28,6 +28,7 @@
         <a href="./calender/calender.php">前往</a>
     </ul>
 
-    <a href="./get_height_weight.php">練習get/post</a>
+    <h2>練習get/post</h2>
+    <a href="./practice/practice_getpost1.php">前往</a>
 </body>
 </html>
