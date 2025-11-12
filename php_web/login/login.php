@@ -23,7 +23,7 @@
     <div class='container'>
         <form action='' method='post'>
             <label>帳號</label><input type='text' name='acc'><br>
-            <label>密碼</label><input type='text' name='pwd'><br>
+            <label>密碼</label><input type='password' name='pwd'><br>
             <input type='submit' value='登入' class='login_buttom'><br>
         </form>
     
