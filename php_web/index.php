@@ -10,7 +10,7 @@
     <ul>
         <li>建立一個可以輸入身高和體重的表單畫面</li>
         <li>按下"計算BMI"按鈕後，在另一個頁面顯示BMI值</li>
-        <a href="./bmi/bmi.php">前往</a>
+        <a href="./bmi/get_height_weight.php">前往</a>
     </ul>
 
     <h2>登入檢查</h2>
@@ -27,5 +27,7 @@
         <li>可以不同的顏色或樣式來強調當日或周末</li>
         <a href="./calender/calender.php">前往</a>
     </ul>
+
+    <a href="./get_height_weight.php">練習get/post</a>
 </body>
 </html>
