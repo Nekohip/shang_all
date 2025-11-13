@@ -30,5 +30,7 @@
 
     <h2>練習get/post</h2>
     <a href="./practice/practice_getpost1.php">前往</a>
+    <h2>練習session</h2>
+    <a href="./practice/practice_session.php">前往</a>
 </body>
 </html>

@@ -1,48 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            height: 30vh;
-            width: 50%;
-            margin: auto;
-            border: 1px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .login_buttom{
-            margin: 25px 0 0 90px;
-        }
-    </style>
+    <title>登入頁面</title>
 </head>
 <body>
-    <div class='container'>
-        <form action='' method='post'>
-            <label>帳號</label><input type='text' name='acc'><br>
-            <label>密碼</label><input type='password' name='pwd'><br>
-            <input type='submit' value='登入' class='login_buttom'><br>
-        </form>
-    
+    <h2>登入</h2>
+    <form action="check.php" method="post">
+        <label for="username">帳號：</label>
+        <input type="text" id="username" name="username" required><br><br>
 
-        <?php
-            $acc[] = 'user';
-            $pwd[] = 'admin';
-            $useracc = $_POST['acc'];
-            $userpwd = $_POST['pwd'];
+        <label for="password">密碼：</label>
+        <input type="password" id="password" name="password" required><br><br>
 
-            if($useracc == $acc[0] && $userpwd == $pwd[0])
-            {
-                echo '<p>登入成功</p>';
-            }
-            else
-            {
-                echo '<p>登入失敗</p>';
-            }
-        ?>
-    </div>
+        <button type="submit">登入</button>
+    </form>
 </body>
 </html>
