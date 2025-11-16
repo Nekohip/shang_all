@@ -1,18 +1,22 @@
 <?php
 //新增session檔案
 session_start();
+//回傳訪問頁面使用的請求方法(GET/POST)
 $method = $_SERVER['REQUEST_METHOD'];
 //接收form傳來的數值
 //如果_POST['username']存在，移除_POST['username']的前後空白，否則設null
 $username = isset($_POST['username']) ? trim($_POST['username']) : null;
 $password = isset($_POST['password']) ? $_POST['password'] : null;
 $message = '';
+//chk用來判斷登入是否成功、message顯示什麼文字
 $chk = false;
-
+//===: 類別也要相等，_SERVER回傳字串
 if ($method === 'POST') {
+    //帳密一樣，_SESSOIN
     if ($username === 'admin' && $password === '123456') {
         $chk = true;
         $message = '登入成功，歡迎回來！';
+        //新增key:login value是1
         $_SESSION['login'] = 1;
     } else {
         $chk = false;
@@ -45,25 +49,30 @@ if ($method === 'POST') {
                         <path d="M8.5 12.5L11 15l5-5" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
+                <!-- 右邊box -->
                 <div>
                     <h1>MyApp</h1>
                     <p>專屬會員入口</p>
                 </div>
             </div>
 
-            <h2 class="headline"><?php echo $chk ? '登入成功' : '登入結果'; ?></h2>
+            <!-- 判斷chk是否true，執行echo $message; -->
+            <h2 class="headline"><?php echo $chk ? $message : $message; ?></h2>
             <p class="sub"></p>
         </div>
-
+        <!-- 左邊form -->
         <div class="card" role="region" aria-label="登入結果">
+            <!-- 交替語法，php和html間切換 -->
+            <!-- method非post -->
             <?php if ($method !== 'POST'): ?>
                 <div class="status err">請從登入表單提交資料。請按下方按鈕返回登入頁面。</div>
+            <!-- method為post -->
             <?php else: ?>
                 <?php if ($chk): ?>
-                    <div class="status ok">帳號：</div>
+                    <div class="status ok"><?php echo '帳號：'.$username ?></div>
                 <?php else: ?>
-                    <div class="status err"></div>
-                <?php endif; ?>
+                    <div class="status err"><?php echo 'ERROR' ?></div>
+                <?php endif; ?>  <!-- 交替語法結尾要endif -->
             <?php endif; ?>
 
             <div style="display:flex;gap:10px;margin-top:12px;align-items:center">

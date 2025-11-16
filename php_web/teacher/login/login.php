@@ -31,12 +31,12 @@ echo $showForm;
                         <path d="M8.5 12.5L11 15l5-5" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
+                <!-- 左邊box -->
                 <div>
                     <h1>MyApp</h1>
                     <p>專屬會員入口</p>
                 </div>
-            </div>
-
+            </div> 
             <h2 class="headline">歡迎回來，輕鬆登入</h2>
             <p class="sub">輸入您的帳號與密碼即可登入。此畫面僅負責前端表單，驗證請交由 chk_login.php 處理。</p>
 
@@ -46,7 +46,7 @@ echo $showForm;
                 <div class="pill">安全加密</div>
             </div>
         </div>
-
+        <!-- 右邊form -->
         <div class="card" role="region" aria-label="登入表單">
             <!-- 如果showForm是false顯示登入表單 -->
             <?php if ($showForm): ?>
@@ -76,7 +76,7 @@ echo $showForm;
                                 記住我
                             </label>
                         </div>
-                        <!-- 按下傳送 -->
+                        <!-- 按下傳送，並跳到chk_login.php -->
                         <div style="display:flex;gap:10px">
                             <button type="submit" class="btn">登入</button>
                             <a class="ghost" href="#" onclick="return false;">註冊</a>

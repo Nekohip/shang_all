@@ -17,7 +17,8 @@
     <ul>
         <li>建立一個可以輸入帳號和密碼的表單畫面</li>
         <li>輸入帳號密碼，按下"登入"按鈕後，在另一個頁面顯示帳號密碼是否正確。</li>
-        <a href="./login/login.php">前往</a>
+        <a href="./login/login.php">前往</a><br>
+        <a href="./teacher//login/login.php">老師寫的</a>
     </ul>
 
     <h2>設計一個網頁版萬年曆，只需顯示西元年月日</h2>
