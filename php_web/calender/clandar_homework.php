@@ -15,8 +15,8 @@
     }
 
     .yearmonth{
-        width: 500px;
-        height: 120px;
+        width: 125px;
+        height: 60px;
         display: flex;
         justify-content: center; 
         align-items: center;
@@ -28,6 +28,18 @@
         display: flex;
         justify-content: center; 
         align-items: center;
+    }
+
+    .next_prev{
+        width: 190px;
+        height: 120px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .next_prev > a{
+        text-decoration: none;
     }
 
     .boxsize:hover,
@@ -94,11 +106,7 @@ $nextM = date("m", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
 $prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
 $nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
 ?>
-<a href="?dateY=<?php echo $prevY; ?>&dateM=<?php echo $month?>">上年</a>
-<a href="?dateY=<?php echo $nextY; ?>&dateM=<?php echo $month?>">下年</a>
 
-<a href="?dateY=<?php echo $year; ?>&dateM=<?php echo $prevM; ?>">上月</a>
-<a href="?dateY=<?php echo $year; ?>&dateM=<?php echo $nextM; ?>">下月</a>
 <?php
 echo "<div class='container'>";
 for($i = 0; $i < 8; $i++)
@@ -109,7 +117,19 @@ for($i = 0; $i < 8; $i++)
     //第一列:年月
     if($i == 0)
     {
-      echo "<div class='yearmonth'>".$year."年".$month."月"."</div>";
+      echo "
+      <div class='next_prev'>
+      <a href='?dateY={$prevY}&dateM{$month}'>上年&emsp;</a>
+      <a href='?dateY={$nextY}&dateM{$month}'>下年</a>
+      </div>
+
+      <div class='yearmonth'>".$year."年".$month."月"."</div>
+
+      <div class='next_prev'>
+      <a href='?dateY={$year}&dateM={$prevM}'>上月&emsp;</a>
+      <a href='?dateY={$year}&dateM={$nextM}'>下月</a>
+      </div>
+      ";
       break;
     }
     //第二列:星期
