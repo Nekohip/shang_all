@@ -26,8 +26,15 @@
         <li>以月為單位來顯示一個月中的日期</li>
         <li>有上一個月，下一個月的連結來切換月份</li>
         <li>可以不同的顏色或樣式來強調當日或周末</li>
-        <a href="./calender/calender.php">前往</a>
+        <a href="./calender/calendar-2.php">前往</a><br>
+        <a href="./calender/clandar_homework.php">作業</a><br>
+        <a href="./teacher/calendar.php">老師寫的</a>
     </ul>
+
+    <h2>檔案分割</h2>
+    <a href="./teacher/div/index.php">老師寫的(get)</a><br>
+    <a href="./teacher/div2/index.php">老師寫的(檔名判斷)</a><br>
+    <a href="./include_div/index.php">我改老師寫的</a>
 
     <h2>練習get/post</h2>
     <a href="./practice/practice_getpost1.php">前往</a>
