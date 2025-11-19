@@ -28,27 +28,19 @@
         display: flex;
         justify-content: center; 
         align-items: center;
-        transition: background-color 0.3s;
+        transition: background-color 0.1s;
     }
 
     .next_prev{
-        width: 145px;
-        height: 50px;
+        width: 190px;
+        height: 120px;
         display: flex;
         justify-content: center; 
         align-items: center;
-        background-color: gray;
-        
     }
 
-    .next_prev>a{
+    .next_prev > a{
         text-decoration: none;
-        color: lightblue;
-        transition: color 0.3s;
-    }
-
-    .next_prev>a:hover{
-        color: yellow;
     }
 
     .boxsize:hover,
