@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@media</title>
+    <style>
+        .container {
+          width: 80%;
+          height: 60vh;
+          background-color: red;
+        }
+
+        /* 視窗寬度600px以下時觸發效果 */
+        /* 可以用來分別手機、電腦版，等於直接寫另一套CSS */
+        @media screen and (max-width:600px) and (max-height:600px)
+        {
+            body{
+                background-color: rgb(34, 0, 226);
+            }
+            .container{
+                background-color: rgb(0, 0, 0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>

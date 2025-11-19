@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .container{
+            width:100px;
+            height:100px;
+            background-color: blue;
+            position: relative;
+            animation-name: move;
+            animation-duration: 0.01s;
+            /* 無限循環 */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes move{
+            /* 分階段動作 */
+            0% {left:0px; top:0px;}
+            25% {left:700px; top:0px;}
+            50% {left:700px; top:300px;}
+            75% {left:0px; top:300px;}
+            100% {left:0px; top:0px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+</body>
+</html>

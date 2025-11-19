@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Animations API 常見動畫示例</title>
+
+  <!-- Web Animations polyfill (as requested) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js" defer></script>
+
+  <style>
+    /* Page layout: center everything */
+    :root {
+      --bg: #0f172a;
+      --card-bg: #111827;
+      --accent: #60a5fa;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(1000px 600px at 50% 40%, #0b1220, var(--bg));
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    .center-wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 4rem 1.25rem;
+    }
+
+    .container {
+      width: min(980px, 95vw);
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Grid of demo cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.1rem 1rem;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow:
+        0 20px 35px -25px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px 200px at 0% 0%, rgba(96,165,250,0.15), transparent 50%),
+                  radial-gradient(500px 200px at 100% 100%, rgba(168,85,247,0.12), transparent 50%);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-box {
+      display: grid;
+      place-items: center;
+      height: 110px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(96,165,250,0.18), rgba(96,165,250,0.08));
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+      border: 1px solid rgba(96,165,250,0.27);
+    }
+
+    /* Button row */
+    .controls {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+      color: var(--text);
+      padding: 0.6rem 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 10px 16px -12px rgba(0,0,0,0.45);
+    }
+
+    .footnote {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 1.7rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-wrap">
+    <div class="container">
+      <h1 class="title">Web Animations API 常見動畫</h1>
+      <p class="subtitle">使用 web-animations polyfill 在畫面中間展示：淡入、滑動、縮放、旋轉、彈跳、翻轉、脈衝等效果。</p>
+
+      <div class="grid" id="grid">
+        <!-- Cards will be created by JS for clarity and less duplication -->
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="playAll">播放全部</button>
+        <button class="btn" id="resetAll">重置全部</button>
+        <button class="btn" id="shuffle">隨機順序</button>
+        <button class="btn" id="slowMo">慢速播放</button>
+      </div>
+
+      <p class="footnote">點擊卡片也可單獨播放。所有動畫皆使用 Web Animations API（含 polyfill）。</p>
+    </div>
+  </div>
+
+  <script>
+    // Demo definitions: name + initializer
+    const demos = [
+      {
+        key: "fadeIn",
+        label: "淡入 Fade In",
+        init: el => el.animate(
+          [
+            { opacity: 0 },
+            { opacity: 1 }
+          ],
+          { duration: 800, easing: "ease-out", fill: "both" }
+        )
+      },
+      {
+        key: "slideUp",
+        label: "上滑 Slide Up",
+        init: el => el.animate(
+          [
+            { transform: "translateY(20px)", opacity: 0 },
+            { transform: "translateY(0)", opacity: 1 }
+          ],
+          { duration: 700, easing: "cubic-bezier(.22,.61,.36,1)", fill: "both" }
+        )
+      },
+      {
+        key: "scaleIn",
+        label: "縮放 Scale In",
+        init: el => el.animate(
+          [
+            { transform: "scale(0.85)", opacity: 0.2 },
+            { transform: "scale(1)", opacity: 1 }
+          ],
+          { duration: 600, easing: "ease-out", fill: "both" }
+        )
+      },
+      {
+        key: "rotateIn",
+        label: "旋轉 Rotate In",
+        init: el => el.animate(
+          [
+            { transform: "rotate(-12deg)", opacity: 0 },
+            { transform: "rotate(0deg)", opacity: 1 }
+          ],
+          { duration: 700, easing: "ease-out", fill: "both" }
+        )
+      },
+      {
+        key: "bounce",
+        label: "彈跳 Bounce",
+        init: el => el.animate(
+          [
+            { transform: "translateY(0)" },
+            { transform: "translateY(-16px)" },
+            { transform: "translateY(0)" },
+            { transform: "translateY(-8px)" },
+            { transform: "translateY(0)" }
+          ],
+          { duration: 900, easing: "cubic-bezier(.34,1.56,.64,1)", iterations: 1, fill: "auto" }
+        )
+      },
+      {
+        key: "flipY",
+        label: "翻轉 Flip Y",
+        init: el => el.animate(
+          [
+            { transform: "rotateY(-90deg)", opacity: 0 },
+            { transform: "rotateY(0deg)", opacity: 1 }
+          ],
+          { duration: 800, easing: "ease-out", fill: "both" }
+        )
+      },
+      {
+        key: "pulse",
+        label: "脈衝 Pulse",
+        init: el => el.animate(
+          [
+            { transform: "scale(1)", filter: "brightness(1)" },
+            { transform: "scale(1.06)", filter: "brightness(1.1)" },
+            { transform: "scale(1)", filter: "brightness(1)" }
+          ],
+          { duration: 900, easing: "ease-in-out", iterations: 1, fill: "auto" }
+        )
+      },
+      {
+        key: "slideLeft",
+        label: "左滑 Slide Left",
+        init: el => el.animate(
+          [
+            { transform: "translateX(24px)", opacity: 0 },
+            { transform: "translateX(0)", opacity: 1 }
+          ],
+          { duration: 700, easing: "cubic-bezier(.22,.61,.36,1)", fill: "both" }
+        )
+      }
+    ];
+
+    // Build grid
+    const grid = document.getElementById("grid");
+    const refs = []; // keep refs to elements and last animation
+
+    for (const d of demos) {
+      const card = document.createElement("div");
+      card.className = "card";
+      const label = document.createElement("div");
+      label.className = "label";
+      label.textContent = d.label;
+      const box = document.createElement("div");
+      box.className = "demo-box";
+      box.textContent = d.key;
+
+      card.appendChild(label);
+      card.appendChild(box);
+      grid.appendChild(card);
+
+      refs.push({ key: d.key, box, init: d.init, lastAnim: null });
+
+      // Click to play individual
+      card.addEventListener("click", () => {
+        stopAnim(refs.find(r => r.box === box));
+        const anim = d.init(box);
+        refs.find(r => r.box === box).lastAnim = anim;
+      });
+    }
+
+    // Helpers
+    function stopAnim(ref) {
+      if (ref && ref.lastAnim) {
+        try {
+          ref.lastAnim.cancel();
+        } catch {}
+        ref.lastAnim = null;
+      }
+    }
+
+    function resetStyles() {
+      for (const r of refs) {
+        stopAnim(r);
+        r.box.style.opacity = "";
+        r.box.style.transform = "";
+        r.box.style.filter = "";
+      }
+    }
+
+    // Controls
+    const playAllBtn = document.getElementById("playAll");
+    const resetAllBtn = document.getElementById("resetAll");
+    const shuffleBtn  = document.getElementById("shuffle");
+    const slowMoBtn   = document.getElementById("slowMo");
+
+    let slowMode = false;
+
+    playAllBtn.addEventListener("click", () => {
+      const order = refs.slice();
+      // staggered play with 100ms delay each
+      order.forEach((r, i) => {
+        stopAnim(r);
+        const base = r.init(r.box);
+        // Slow mode adjusts timing
+        if (slowMode) {
+          base.updateTiming({ duration: base.effect.getTiming().duration * 1.8 });
+        }
+        // Stagger start
+        base.startTime = (document.timeline.currentTime || 0) + i * 100;
+        r.lastAnim = base;
+      });
+    });
+
+    resetAllBtn.addEventListener("click", () => {
+      resetStyles();
+    });
+
+    shuffleBtn.addEventListener("click", () => {
+      const shuffled = refs.slice().sort(() => Math.random() - 0.5);
+      shuffled.forEach((r, i) => {
+        stopAnim(r);
+        const anim = r.init(r.box);
+        if (slowMode) {
+          anim.updateTiming({ duration: anim.effect.getTiming().duration * 1.8 });
+        }
+        anim.startTime = (document.timeline.currentTime || 0) + i * 120;
+        r.lastAnim = anim;
+      });
+    });
+
+    slowMoBtn.addEventListener("click", () => {
+      slowMode = !slowMode;
+      slowMoBtn.textContent = slowMode ? "慢速播放：開" : "慢速播放";
+      slowMoBtn.style.borderColor = slowMode ? "rgba(96,165,250,0.8)" : "rgba(255,255,255,0.12)";
+    });
+
+    // Initial entrance animation for all cards
+    window.addEventListener("DOMContentLoaded", () => {
+      refs.forEach((r, i) => {
+        const anim = r.box.animate(
+          [
+            { transform: "translateY(18px)", opacity: 0 },
+            { transform: "translateY(0px)", opacity: 1 }
+          ],
+          { duration: 600, easing: "cubic-bezier(.22,.61,.36,1)", fill: "both", delay: i * 60 }
+        );
+        r.lastAnim = anim;
+      });
+    });
+  </script>
+</body>
+</html>

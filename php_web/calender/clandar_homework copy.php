@@ -28,19 +28,27 @@
         display: flex;
         justify-content: center; 
         align-items: center;
-        transition: background-color 0.1s;
+        transition: background-color 0.3s;
     }
 
     .next_prev{
-        width: 190px;
-        height: 120px;
+        width: 145px;
+        height: 50px;
         display: flex;
         justify-content: center; 
         align-items: center;
+        background-color: gray;
+        
     }
 
-    .next_prev > a{
+    .next_prev>a{
         text-decoration: none;
+        color: lightblue;
+        transition: color 0.3s;
+    }
+
+    .next_prev>a:hover{
+        color: yellow;
     }
 
     .boxsize:hover,
@@ -136,7 +144,7 @@ for($i = 0; $i < 8; $i++)
     else if($i == 1)
     {
       //六日變色
-      echo "<div class='".(($j==0 || $j == 6) ? "boxsize color" : "boxsize")."'>".$days[$j]."</div>";
+      echo "<div class='boxsize".(($j==0 || $j == 6) ? " color" : "")."'>".$days[$j]."</div>";
     }
     else
     {
@@ -144,26 +152,15 @@ for($i = 0; $i < 8; $i++)
       if(date('m', $all_days) < $month || date('m', $all_days) > $month)
       {
         //非本月灰字，六日格變色
-        if($j == 0 || $j == 6)
-        {
-          echo "<div class='boxsize color text_gray'>".date('j',$all_days)."</div>";
-        }
-        else
-        {
-          echo "<div class='boxsize text_gray'>".date('j',$all_days)."</div>";
-        }
+          echo "<div class='boxsize
+          ".(($j==0 || $j == 6) ? "text_gray color" : "text_gray")."
+          '>".date('j',$all_days)."</div>";
       }
       else
       {
-        if($j == 0 || $j == 6)
-        {
-          echo "<div class='boxsize color'>".date('j',$all_days)."</div>";
-        }
-        else
-        {
-          //本月日
-          echo "<div class='boxsize'>".date('j',$all_days)."</div>";
-        }
+        echo "<div class='boxsize
+        ".(($j==0 || $j == 6) ? " color" : "")."
+        '>".date('j',$all_days)."</div>"; 
       }
       $all_days = strtotime("+1 day", $all_days);
     }
