@@ -153,7 +153,7 @@ for($i = 0; $i < 8; $i++)
       {
         //非本月灰字，六日格變色
           echo "<div class='boxsize
-          ".(($j==0 || $j == 6) ? "text_gray color" : "text_gray")."
+          ".(($j==0 || $j == 6) ? "text_gray  color" : "text_gray")."
           '>".date('j',$all_days)."</div>";
       }
       else
