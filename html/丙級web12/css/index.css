@@ -1,0 +1,138 @@
+*{
+    font-family: "標楷體";
+    box-sizing: border-box;
+    
+}
+.container{
+    width: 1024px;
+    height: 768px;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.header{
+    width: 1024px;
+    height: 65px;
+    /* background-color: lightblue; */
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+
+.header>a>img{
+    width: 994px;
+    height: 60px;
+    margin:3px 0 0 24px;
+}
+
+.main{
+    width: 1024px;
+    height: 683px;
+    /* background-color: lightcoral; */
+    display: flex;
+    
+}
+
+.main-left{
+    width: 215px;
+    height: 683px;
+    /* background-color: lightgoldenrodyellow; */
+}
+
+.m-left-top{
+    width: 100%;
+    height: 658px;
+    /* background-color: lightgreen; */
+    border: 1px solid black;
+    border-bottom: 0px;
+
+}
+
+.m-left-top-text{
+    font-size: 24px;
+    color: #FF00FF;
+    text-align: center;
+    text-decoration-line: underline;
+    padding-top: 10px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+.menu>a{
+    background-image: url("../img/menu1.png");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    padding-top:8px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.menu>a:hover{
+    background-image: url("../img/menu2.png");
+}
+
+.m-left-bottom{
+    width: 100%;
+    height: 25px;
+    /* background-color: lightpink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-bottom: 0px;
+}
+
+.main-right{
+    width: 809px;
+    height: 683px;
+    /* background-color: lightgray; */
+    
+}
+
+.m-right-top{
+    width: 100%;
+    height: 29px;
+    /* background-color: lightsalmon; */
+    border: 1px solid black;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+.m-right-top>marquee{
+    font-size: 24px;
+    color: #0000FF;
+}
+
+.m-right-bottom{
+    background-image: url("../img/0101.jpg");
+    width: 100%;
+    height: 654px;
+    /* background-color: lightskyblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+.m-right-bottom>iframe{
+    width: 100%;
+    height: 654px;
+}
+
+.footer{
+    width: 1024px;
+    height: 20px;
+    /* background-color: lightcyan; */
+    text-align: center;
+    border: 1px solid black;
+}
