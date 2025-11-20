@@ -114,6 +114,8 @@ $nextM = date("m", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
 
 $prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
 $nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
+
+
 ?>
 
 <?php
@@ -123,6 +125,18 @@ for($i = 0; $i < 8; $i++)
   echo "<div class='calander'>";
   for($j = 0; $j < 7; $j++)
   {
+    $class_day = ['boxsize'];
+    $class_week = ['boxsize'];
+
+    if($j == 0 || $j == 6)
+    {
+      $class_day[] = 'color';
+      $class_week[] = 'color';
+    }
+
+    if(date('m', $all_days) < $month || date('m', $all_days) > $month)
+      $class_day[] = 'text_gray';
+
     //第一列:年月
     if($i == 0)
     {
@@ -143,25 +157,12 @@ for($i = 0; $i < 8; $i++)
     //第二列:星期
     else if($i == 1)
     {
-      //六日變色
-      echo "<div class='boxsize".(($j==0 || $j == 6) ? " color" : "")."'>".$days[$j]."</div>";
+      echo "<div class='".implode(' ', $class_week)."'>".$days[$j]."</div>";
     }
     else
     {
       //開始印日
-      if(date('m', $all_days) < $month || date('m', $all_days) > $month)
-      {
-        //非本月灰字，六日格變色
-          echo "<div class='
-          ".(($j==0 || $j == 6) ? "text_gray boxsize color" : "text_gray boxsize")."
-          '>".date('j',$all_days)."</div>";
-      }
-      else
-      {
-        echo "<div class='boxsize
-        ".(($j==0 || $j == 6) ? " color" : "")."
-        '>".date('j',$all_days)."</div>"; 
-      }
+      echo "<div class='".implode(' ', $class_day)."'>".date('j',$all_days)."</div>";
       $all_days = strtotime("+1 day", $all_days);
     }
   }
@@ -169,8 +170,6 @@ for($i = 0; $i < 8; $i++)
 }
 echo "</table>";
 echo "</div>";
-  
-  
 ?>
   
 </body>
