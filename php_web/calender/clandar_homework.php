@@ -6,100 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="#">
   <title>萬年曆作業</title>
-  <style>
-   /*請在這裹撰寫你的CSS*/ 
-    *{
-        font-family:"monospace";
-        font-size: 22px;
-        box-sizing: border-box;
-    }
-
-    .yearmonth{
-        width: 125px;
-        height: 60px;
-        display: flex;
-        justify-content: center; 
-        align-items: center;
-        transition: background-color 0.3s;
-    }
-
-    .boxsize{
-        width: 200px;
-        height: 76px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: background-color 0.4s;
-    }
-
-    .boxsize_week{
-        width: 200px;
-        height: 76px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: background-color 0.4s;
-    }
-
-    .boxsize_week:hover,
-    .boxsize:hover,
-    .yearmonth:hover {
-        background-color: lightblue;
-    }
-
-    .next_prev{
-        width: 145px;
-        height: 50px;
-        display: flex;
-        justify-content: center; 
-        align-items: center;
-        background-color: gray;      
-    }
-
-    .next_prev>a{
-        text-decoration: none;
-        color: lightblue;
-        transition: color 0.3s;
-    }
-
-    .next_prev>a:hover{
-        color: yellow;
-    }
-
-    .boxsize:active,
-    .yearmonth:active {
-        background-color: royalblue;
-    }
-
-    .container{
-        width:90%;
-        height: 500vh;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .calander{
-        border: 1px solid black;
-        width: 1610px;
-        height: 85px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: -1px;
-    }
-
-    .color{
-        background-color: lightyellow;
-    }
-
-    .text_gray{
-        color: lightgray;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <h1>萬年曆</h1>  
@@ -112,33 +19,9 @@ if(!isset($_SESSION['notes']))
 }
 ?>
 
-<form action="clandar_homework.php" method="post">
-  <label>新增註解</label><br>
-  年:<input type="text" name="year"><br>
-  月:<input type="text" name="month"><br>
-  日:<input type="text" name="day"><br>
-  註解:<input type="text" name="note"><br>
-  <input type="submit" value="新增">
-</form>
-
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/
-//調整月曆年月
-$nyear = $_POST['year'] ?? null;
-$nmonth = $_POST['month'] ?? null;
-$nday = $_POST['day'] ?? null;
-$note = $_POST['note'] ?? null;
-
-if($nyear && $nmonth && $nday && $note)
-{
-  $_SESSION['notes'][$nyear][$nmonth][$nday] = $note;
-  echo"註解已新增至{$nyear}年{$nmonth}月{$nday}日，message:{$note}";
-}
-else
-{
-  echo "資料輸入不完整，請重新輸入";
-}
-
+//
 $month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
 $year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
 
@@ -154,6 +37,12 @@ $nextM = date("n", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
 
 $prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
 $nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
+
+//註解變數，在session中新增巢狀陣列[年=>[月=>[日=>註解]]]
+$nyear = $_POST['year'] ?? null;
+$nmonth = $_POST['month'] ?? null;
+$nday = $_POST['day'] ?? null;
+$note = $_POST['note'] ?? null;
 ?>
 
 <?php
@@ -163,6 +52,7 @@ for($i = 0; $i < 8; $i++)
   echo "<div class='calander'>";
   for($j = 0; $j < 7; $j++)
   {
+    //判斷各格子要用哪種背景/文字顏色
     $class_day = ['boxsize'];
     $class_week = ['boxsize_week'];
 
@@ -211,6 +101,35 @@ for($i = 0; $i < 8; $i++)
 echo "</table>";
 echo "</div>";
 ?>
+
+<div class="tools">
+  <!-- 註解表單 -->
+  <form action="clandar_homework.php" method="post">
+    <label>新增註解</label><br>
+    年:<input type="text" name="year"><br>
+    月:<input type="text" name="month"><br>
+    日:<input type="text" name="day"><br>
+    註解:<input type="text" name="note"><br>
+    <input type="submit" value="新增">
+  </form>
+
+  <!-- 註解輸入後判斷 -->
+  <?php 
+    if($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+      if(!empty($nyear) && !empty($nmonth) && !empty($nday) &&!empty($note))
+      {
+        $_SESSION['notes'][$nyear][$nmonth][$nday] = $note;
+        echo"註解已新增至{$nyear}年{$nmonth}月{$nday}日，message:{$note}";
+        header("Location: clandar_homework.php?dateY={$nyear}&dateM={$nmonth}");
+      }
+      else
+      {
+        echo "資料輸入不完整，請重新輸入";
+      }
+    }
+  ?>
+</div>
   
 </body>
 </html>
