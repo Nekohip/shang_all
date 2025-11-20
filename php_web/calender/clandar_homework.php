@@ -10,7 +10,7 @@
    /*請在這裹撰寫你的CSS*/ 
     *{
         font-family:"monospace";
-        font-size: 25px;
+        font-size: 22px;
         box-sizing: border-box;
     }
 
@@ -20,15 +20,21 @@
         display: flex;
         justify-content: center; 
         align-items: center;
+        transition: background-color 0.3s;
     }
 
     .boxsize{
         width: 90px;
         height: 120px;
         display: flex;
-        justify-content: center; 
+        flex-direction: column;
         align-items: center;
-        transition: background-color 0.3s;
+        transition: background-color 0.4s;
+    }
+
+    .boxsize:hover,
+    .yearmonth:hover {
+        background-color: lightblue;
     }
 
     .next_prev{
@@ -37,8 +43,7 @@
         display: flex;
         justify-content: center; 
         align-items: center;
-        background-color: gray;
-        
+        background-color: gray;      
     }
 
     .next_prev>a{
@@ -49,11 +54,6 @@
 
     .next_prev>a:hover{
         color: yellow;
-    }
-
-    .boxsize:hover,
-    .yearmonth:hover {
-        background-color: lightblue;
     }
 
     .boxsize:active,
@@ -115,7 +115,11 @@ $nextM = date("m", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
 $prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
 $nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
 
-
+$notes = [];
+$notes[2025][11][20] = '生日';
+// $notes[2025][11][21] = '生日';
+$notes[2025][11][2] = '生日';
+$notes[2025][10][2] = '生日';
 ?>
 
 <?php
@@ -161,8 +165,9 @@ for($i = 0; $i < 8; $i++)
     }
     else
     {
+      (isset($notes[$year][date('m', $all_days)][date('j',$all_days)])) ? $message = $notes[$year][date('m', $all_days)][date('j', $all_days)] : $message = "";
       //開始印日
-      echo "<div class='".implode(' ', $class_day)."'>".date('j',$all_days)."</div>";
+      echo "<div class='".implode(' ', $class_day)."'>".date('j',$all_days)."<div>{$message}</div></div>";
       $all_days = strtotime("+1 day", $all_days);
     }
   }
