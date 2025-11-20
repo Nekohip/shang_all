@@ -24,14 +24,24 @@
     }
 
     .boxsize{
-        width: 90px;
-        height: 120px;
+        width: 200px;
+        height: 76px;
         display: flex;
         flex-direction: column;
         align-items: center;
         transition: background-color 0.4s;
     }
 
+    .boxsize_week{
+        width: 200px;
+        height: 76px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.4s;
+    }
+
+    .boxsize_week:hover,
     .boxsize:hover,
     .yearmonth:hover {
         background-color: lightblue;
@@ -73,8 +83,8 @@
 
     .calander{
         border: 1px solid black;
-        width: 700px;
-        height: 140px;
+        width: 1610px;
+        height: 85px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -95,11 +105,41 @@
 <h1>萬年曆</h1>  
 
 <?php
-/*請在這裹撰寫你的萬年曆程式碼*/  
-// $month = date("m");
-// $year = date("Y");
+session_start();
+if(!isset($_SESSION['notes']))
+{
+  $_SESSION['notes'] = [];
+}
+?>
+
+<form action="clandar_homework.php" method="post">
+  <label>新增註解</label><br>
+  年:<input type="text" name="year"><br>
+  月:<input type="text" name="month"><br>
+  日:<input type="text" name="day"><br>
+  註解:<input type="text" name="note"><br>
+  <input type="submit" value="新增">
+</form>
+
+<?php
+/*請在這裹撰寫你的萬年曆程式碼*/
 //調整月曆年月
-$month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("m");
+$nyear = $_POST['year'] ?? null;
+$nmonth = $_POST['month'] ?? null;
+$nday = $_POST['day'] ?? null;
+$note = $_POST['note'] ?? null;
+
+if($nyear && $nmonth && $nday && $note)
+{
+  $_SESSION['notes'][$nyear][$nmonth][$nday] = $note;
+  echo"註解已新增至{$nyear}年{$nmonth}月{$nday}日，message:{$note}";
+}
+else
+{
+  echo "資料輸入不完整，請重新輸入";
+}
+
+$month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
 $year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
 
 $firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
@@ -109,17 +149,11 @@ $thismonth_days = date("t", strtotime(date("{$year}-{$month}")));
 $all_days = strtotime("- $firstweek days", $firstday);
 $days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
 
-$prevM = date("m", strtotime("-1 month", strtotime("{$year}-{$month}-1")));
-$nextM = date("m", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
+$prevM = date("n", strtotime("-1 month", strtotime("{$year}-{$month}-1")));
+$nextM = date("n", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
 
 $prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
 $nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
-
-$notes = [];
-$notes[2025][11][20] = '生日';
-// $notes[2025][11][21] = '生日';
-$notes[2025][11][2] = '生日';
-$notes[2025][10][2] = '生日';
 ?>
 
 <?php
@@ -130,7 +164,7 @@ for($i = 0; $i < 8; $i++)
   for($j = 0; $j < 7; $j++)
   {
     $class_day = ['boxsize'];
-    $class_week = ['boxsize'];
+    $class_week = ['boxsize_week'];
 
     if($j == 0 || $j == 6)
     {
@@ -146,8 +180,8 @@ for($i = 0; $i < 8; $i++)
     {
       echo 
       "<div class='next_prev'>
-      <a href='?dateY={$prevY}&dateM{$month}'>上年&emsp;</a>
-      <a href='?dateY={$nextY}&dateM{$month}'>下年</a>
+      <a href='?dateY={$prevY}&dateM={$month}'>上年&emsp;</a>
+      <a href='?dateY={$nextY}&dateM={$month}'>下年</a>
       </div>
 
       <div class='yearmonth'>".$year."年".$month."月"."</div>
@@ -165,7 +199,8 @@ for($i = 0; $i < 8; $i++)
     }
     else
     {
-      (isset($notes[$year][date('m', $all_days)][date('j',$all_days)])) ? $message = $notes[$year][date('m', $all_days)][date('j', $all_days)] : $message = "";
+      (isset($_SESSION['notes'][date('Y', $all_days)][date('n', $all_days)][date('j',$all_days)])) ? 
+      $message = $_SESSION['notes'][date('Y', $all_days)][date('n', $all_days)][date('j', $all_days)] : $message = "";
       //開始印日
       echo "<div class='".implode(' ', $class_day)."'>".date('j',$all_days)."<div>{$message}</div></div>";
       $all_days = strtotime("+1 day", $all_days);
