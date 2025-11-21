@@ -19,48 +19,47 @@ if(!isset($_SESSION['notes']))
 }
 ?>
 
-<form action="clandar_homework.php" method="post">
-  <label>新增註解</label><br>
-  年:<input type="text" name="year"><br>
-  月:<input type="text" name="month"><br>
-  日:<input type="text" name="day"><br>
-  註解:<input type="text" name="note"><br>
-  <input type="submit" value="新增">
+<form action="clandar_homework copy.php">
+  <select name="dateY">
+    <option value="2025">2025</option>
+  </select>
+
+  <select name="dateM">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+</select>
+<input type="submit" value="確定">
 </form>
 
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/
-//調整月曆年月
+$year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
+$month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
+
+$firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
+//當年月一日戳記
+$firstday = strtotime(date("{$year}-{$month}-1"));
+//所有天數
+$thismonth_days = date("t", strtotime(date("{$year}-{$month}")));
+//一日戳記-第一天星期=第一格戳記
+$days = strtotime("- $firstweek days", $firstday);
+$weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+
+//註解變數，在session中新增巢狀陣列[年=>[月=>[日=>註解]]]
 $nyear = $_POST['year'] ?? null;
 $nmonth = $_POST['month'] ?? null;
 $nday = $_POST['day'] ?? null;
 $note = $_POST['note'] ?? null;
-
-if($nyear && $nmonth && $nday && $note)
-{
-  $_SESSION['notes'][$nyear][$nmonth][$nday] = $note;
-  echo"註解已新增至{$nyear}年{$nmonth}月{$nday}日，message:{$note}";
-}
-else
-{
-  echo "資料輸入不完整，請重新輸入";
-}
-
-$month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
-$year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
-
-$firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
-$firstday = strtotime(date("{$year}-{$month}-1"));
-
-$thismonth_days = date("t", strtotime(date("{$year}-{$month}")));
-$all_days = strtotime("- $firstweek days", $firstday);
-$days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-
-$prevM = date("n", strtotime("-1 month", strtotime("{$year}-{$month}-1")));
-$nextM = date("n", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
-
-$prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
-$nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
 ?>
 
 <?php
@@ -70,6 +69,7 @@ for($i = 0; $i < 8; $i++)
   echo "<div class='calander'>";
   for($j = 0; $j < 7; $j++)
   {
+    //判斷各格子要用哪種背景/文字顏色
     $class_day = ['boxsize'];
     $class_week = ['boxsize_week'];
 
@@ -79,38 +79,28 @@ for($i = 0; $i < 8; $i++)
       $class_week[] = 'color';
     }
 
-    if(date('m', $all_days) < $month || date('m', $all_days) > $month)
+    if(date('m', $days) < $month || date('m', $days) > $month)
       $class_day[] = 'text_gray';
 
-    //第一列:年月
+    //第一列:年月/上下年/月按鈕
     if($i == 0)
     {
       echo 
-      "<div class='next_prev'>
-      <a href='?dateY={$prevY}&dateM={$month}'>上年&emsp;</a>
-      <a href='?dateY={$nextY}&dateM={$month}'>下年</a>
-      </div>
-
-      <div class='yearmonth'>".$year."年".$month."月"."</div>
-
-      <div class='next_prev'>
-      <a href='?dateY={$year}&dateM={$prevM}'>上月&emsp;</a>
-      <a href='?dateY={$year}&dateM={$nextM}'>下月</a>
-      </div>";
+      "<div class='yearmonth'>".$year."年".$month."月"."</div>";
       break;
     }
     //第二列:星期
     else if($i == 1)
     {
-      echo "<div class='".implode(' ', $class_week)."'>".$days[$j]."</div>";
+      echo "<div class='".implode(' ', $class_week)."'>".$weeks[$j]."</div>";
     }
     else
     {
-      (isset($_SESSION['notes'][date('Y', $all_days)][date('n', $all_days)][date('j',$all_days)])) ? 
-      $message = $_SESSION['notes'][date('Y', $all_days)][date('n', $all_days)][date('j', $all_days)] : $message = "";
+      (isset($_SESSION['notes'][date('Y', $days)][date('n', $days)][date('j',$days)])) ? 
+      $message = $_SESSION['notes'][date('Y', $days)][date('n', $days)][date('j', $days)] : $message = "";
       //開始印日
-      echo "<div class='".implode(' ', $class_day)."'>".date('j',$all_days)."<div>{$message}</div></div>";
-      $all_days = strtotime("+1 day", $all_days);
+      echo "<div class='".implode(' ', $class_day)."'>".date('j',$days)."<div>{$message}</div></div>";
+      $days = strtotime("+1 day", $days);
     }
   }
   echo "</div>";
@@ -118,6 +108,35 @@ for($i = 0; $i < 8; $i++)
 echo "</table>";
 echo "</div>";
 ?>
+
+<div class="tools">
+  <!-- 註解表單 -->
+  <form action="clandar_homework copy.php" method="post">
+    <label>新增註解</label><br>
+    年:<input type="text" name="year"><br>
+    月:<input type="text" name="month"><br>
+    日:<input type="text" name="day"><br>
+    註解:<input type="text" name="note"><br>
+    <input type="submit" value="新增">
+  </form>
+
+  <!-- 註解輸入後判斷 -->
+  <?php 
+    if($_SERVER['REQUEST_METHOD'] === 'POST')
+    {
+      if(!empty($nyear) && !empty($nmonth) && !empty($nday) &&!empty($note))
+      {
+        $_SESSION['notes'][$nyear][$nmonth][$nday] = $note;
+        echo"註解已新增至{$nyear}年{$nmonth}月{$nday}日，message:{$note}";
+        header("Location: clandar_homework.php?dateY={$nyear}&dateM={$nmonth}");
+      }
+      else
+      {
+        echo "資料輸入不完整，請重新輸入";
+      }
+    }
+  ?>
+</div>
   
 </body>
 </html>
