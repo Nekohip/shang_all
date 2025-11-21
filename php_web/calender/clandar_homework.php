@@ -19,11 +19,32 @@ if(!isset($_SESSION['notes']))
 }
 ?>
 
+<form action="clandar_homework copy.php">
+  <select name="dateY">
+    <option value="2025">2025</option>
+  </select>
+
+  <select name="dateM">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+</select>
+<input type="submit" value="確定">
+</form>
+
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/
-
-$month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
 $year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
+$month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
 
 $firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
 //當年月一日戳記
@@ -33,13 +54,6 @@ $thismonth_days = date("t", strtotime(date("{$year}-{$month}")));
 //一日戳記-第一天星期=第一格戳記
 $days = strtotime("- $firstweek days", $firstday);
 $weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-
-//上/下個年/月
-$prevM = date("n", strtotime("-1 month", strtotime("{$year}-{$month}-1")));
-$nextM = date("n", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
-
-$prevY = date("Y", strtotime("-1 year", strtotime("{$year}-{$month}-1")));
-$nextY = date("Y", strtotime("+1 year", strtotime("{$year}-{$month}-1")));
 
 //註解變數，在session中新增巢狀陣列[年=>[月=>[日=>註解]]]
 $nyear = $_POST['year'] ?? null;
@@ -72,17 +86,7 @@ for($i = 0; $i < 8; $i++)
     if($i == 0)
     {
       echo 
-      "<div class='next_prev'>
-      <a href='?dateY={$prevY}&dateM={$month}'>上年&emsp;</a>
-      <a href='?dateY={$nextY}&dateM={$month}'>下年</a>
-      </div>
-
-      <div class='yearmonth'>".$year."年".$month."月"."</div>
-
-      <div class='next_prev'>
-      <a href='?dateY={$year}&dateM={$prevM}'>上月&emsp;</a>
-      <a href='?dateY={$year}&dateM={$nextM}'>下月</a>
-      </div>";
+      "<div class='yearmonth'>".$year."年".$month."月"."</div>";
       break;
     }
     //第二列:星期
@@ -107,7 +111,7 @@ echo "</div>";
 
 <div class="tools">
   <!-- 註解表單 -->
-  <form action="clandar_homework.php" method="post">
+  <form action="clandar_homework copy.php" method="post">
     <label>新增註解</label><br>
     年:<input type="text" name="year"><br>
     月:<input type="text" name="month"><br>
