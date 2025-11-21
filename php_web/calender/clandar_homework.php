@@ -21,17 +21,20 @@ if(!isset($_SESSION['notes']))
 
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/
-//
+
 $month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
 $year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
 
 $firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
+//當年月一日戳記
 $firstday = strtotime(date("{$year}-{$month}-1"));
-
+//所有天數
 $thismonth_days = date("t", strtotime(date("{$year}-{$month}")));
-$all_days = strtotime("- $firstweek days", $firstday);
-$days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+//一日戳記-第一天星期=第一格戳記
+$days = strtotime("- $firstweek days", $firstday);
+$weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
 
+//上/下個年/月
 $prevM = date("n", strtotime("-1 month", strtotime("{$year}-{$month}-1")));
 $nextM = date("n", strtotime("+1 month", strtotime("{$year}-{$month}-1")));
 
@@ -62,10 +65,10 @@ for($i = 0; $i < 8; $i++)
       $class_week[] = 'color';
     }
 
-    if(date('m', $all_days) < $month || date('m', $all_days) > $month)
+    if(date('m', $days) < $month || date('m', $days) > $month)
       $class_day[] = 'text_gray';
 
-    //第一列:年月
+    //第一列:年月/上下年/月按鈕
     if($i == 0)
     {
       echo 
@@ -85,15 +88,15 @@ for($i = 0; $i < 8; $i++)
     //第二列:星期
     else if($i == 1)
     {
-      echo "<div class='".implode(' ', $class_week)."'>".$days[$j]."</div>";
+      echo "<div class='".implode(' ', $class_week)."'>".$weeks[$j]."</div>";
     }
     else
     {
-      (isset($_SESSION['notes'][date('Y', $all_days)][date('n', $all_days)][date('j',$all_days)])) ? 
-      $message = $_SESSION['notes'][date('Y', $all_days)][date('n', $all_days)][date('j', $all_days)] : $message = "";
+      (isset($_SESSION['notes'][date('Y', $days)][date('n', $days)][date('j',$days)])) ? 
+      $message = $_SESSION['notes'][date('Y', $days)][date('n', $days)][date('j', $days)] : $message = "";
       //開始印日
-      echo "<div class='".implode(' ', $class_day)."'>".date('j',$all_days)."<div>{$message}</div></div>";
-      $all_days = strtotime("+1 day", $all_days);
+      echo "<div class='".implode(' ', $class_day)."'>".date('j',$days)."<div>{$message}</div></div>";
+      $days = strtotime("+1 day", $days);
     }
   }
   echo "</div>";
