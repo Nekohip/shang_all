@@ -19,33 +19,15 @@ if(!isset($_SESSION['notes']))
 }
 ?>
 
-<form action="clandar_homework copy.php">
-  <select name="dateY">
-    <option value="2025">2025</option>
-  </select>
-
-  <select name="dateM">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-</select>
-<input type="submit" value="確定">
-</form>
-
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/
 $year = isset($_GET["dateY"]) ? $_GET["dateY"] : date("Y");
 $month = isset($_GET["dateM"]) ? $_GET["dateM"] : date("n");
+?>
 
+
+
+<?php
 $firstweek = date("w", strtotime(date("{$year}-{$month}-1")));
 //當年月一日戳記
 $firstday = strtotime(date("{$year}-{$month}-1"));
@@ -85,8 +67,27 @@ for($i = 0; $i < 8; $i++)
     //第一列:年月/上下年/月按鈕
     if($i == 0)
     {
-      echo 
-      "<div class='yearmonth'>".$year."年".$month."月"."</div>";
+    ?>
+        <form action="clandar_homework.php">
+          <select name="dateY">
+            <?php
+              for($y = 1930; $y <= (date("Y") + 20); $y++)
+              {
+                echo "<option value='{$y}'" . (($y == $year) ? 'selected' : '') . ">{$y}</option>";
+              }
+            ?>
+          </select>年
+          <select name="dateM">
+            <?php
+              for($m = 1; $m <= 12; $m++)
+              {
+                echo "<option value='{$m}'" . (($m == $month) ? 'selected' : '') . ">{$m}</option>";
+              }
+            ?>
+          </select>月
+          <input type="submit" value="確定">
+        </form>
+    <?php
       break;
     }
     //第二列:星期
